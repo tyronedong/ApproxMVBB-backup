@@ -2135,9 +2135,9 @@ namespace ApproxMVBB{
         }
 
         /** K-Nearst neighbour search ===================================================*/
-        struct ParentInfo {
-            ParentInfo( NodeType* p, bool l=false,bool r = false): m_parent(p), childVisited{l,r} {}
-            NodeType* m_parent;
+        struct NodeInfo {
+            NodeInfo( NodeType* p, bool l=false, bool r = false): m_node(p), childVisited{l,r} {}
+            NodeType* m_node;
             bool childVisited[2];
         };
 
@@ -2284,48 +2284,46 @@ namespace ApproxMVBB{
             // Debug set, will be optimized away in release
             // std::set<NodeType*> visitedLeafs;
 
-            // Get leaf node and parent stack by traversing down the tree
-            std::vector< ParentInfo > parents;
-            parents.reserve(m_statistics.m_treeDepth);
+            // Get leaf node and node stack by traversing down the tree
+            std::vector< NodeInfo > nodeStack;
+            nodeStack.reserve(m_statistics.m_treeDepth);
 
-            parents.emplace_back( nullptr, false, false);  // emplace
             NodeType * currNode = this->m_root;
-
-
             while(!currNode->isLeaf()) {
                 // all points greater or equal to the splitPosition belong to the right node
                 if(distComp.m_ref(currNode->m_splitAxis) >= currNode->m_splitPosition) {
-                    parents.emplace_back( currNode, false,true );
+                    nodeStack.emplace_back( currNode, false,true );
                     currNode = currNode->rightNode();
                 } else {
-                    parents.emplace_back( currNode, true,false );
+                    nodeStack.emplace_back( currNode, true,false );
                     currNode = currNode->leftNode();
                 }
             }
             ApproxMVBB_ASSERTMSG(currNode && currNode->isLeaf(), "currNode is nullptr!")
-            // currNode is a leaf !
+
+            nodeStack.emplace_back(currNode, true,true) // add last leaf node
 
             PREC d = 0.0;
             PREC maxDistSq = 0.0;
             ParentInfo * currParentInfo = nullptr;
 
             // Move up the tree, always visiting the all childs which overlap the norm ball
-            while(currNode!=nullptr) {
+            while(!nodeStack.empty()) {
 
-                currParentInfo = &parents.back();
-                ApproxMVBB_ASSERTMSG(currNode, "currNode is nullptr!")
-
+                currNodeInfo = &nodeStack.back();
+                currNode = currNodeInfo->m_node;
+                ApproxMVBB_ASSERTMSG(currNode,"cannot be nullptr")
+                
                 if( !currNode->isLeaf()) {
 
-                    // this is no leaf
-                    if (!currParentInfo->childVisited[0]) {
-                        // left not visited
-                        // we processed this child
-                        currParentInfo->childVisited[0] = true; // set parents flag
+                    // currNode is no leaf
+                    if (!currNodeInfo->childVisited[0]) {
+                        // left child not visited
+                        currNodeInfo->childVisited[0] = true; // set node as visited
 
                         if( kNearest.full()) {
                             // compute distance to split Axis
-                            d = currParentInfo->m_parent->m_splitPosition - distComp.m_ref(currParentInfo->m_parent->m_splitAxis);
+                            d = currNode->m_splitPosition - distComp.m_ref(currNode->m_splitAxis);
                             if(d<=0.0) {
                                 // ref point is right of split axis
                                 if( d*d >= maxDistSq) {
@@ -2334,23 +2332,18 @@ namespace ApproxMVBB{
                             }
                             // ref point is left of split axis
                         }
+                        
                         // maxNorm ball overlaps left side or to little points
                         // visit left side!
-                        currNode = currNode->leftNode(); // cannot be nullptr, since currNode is not leaf
-                        ApproxMVBB_ASSERTMSG(currNode,"cannot be nullptr, since a leaf")
-                        if (!currNode->isLeaf()) {
-                            // add the parent if no leaf
-                            parents.emplace_back(currNode);
-                        }
-
+                        nodeStack.emplace_back(currNode->leftNode());
                         continue;
 
                     } else if (!currParentInfo->childVisited[1]) {
-                        // right not visited
+                        // right child not visited
                         // we processed this child
-                        currParentInfo->childVisited[1] = true; // set parents flag
+                        currNodeInfo->childVisited[1] = true; // set node as visited
                         if( kNearest.full()) {
-                            d = currParentInfo->m_parent->m_splitPosition - distComp.m_ref(currParentInfo->m_parent->m_splitAxis);
+                            d = currNode->m_splitPosition - distComp.m_ref(currNode->m_splitAxis);
                             if( d > 0) {
                                 // ref point is left of split axis
                                 if( d*d > maxDistSq) {
@@ -2361,39 +2354,29 @@ namespace ApproxMVBB{
 
                         // maxNorm ball overlaps right side or to little points!
                         // visit right side!
-                        currNode = currNode->rightNode();
-                        ApproxMVBB_ASSERTMSG(currNode,"cannot be nullptr, since a leaf")
-                        if (!currNode->isLeaf()) {
-                            // add to parent
-                            parents.emplace_back( currNode );
-                        }
+                        nodeStack.emplace_back( currNode->rightNode() );
                         continue;
                     }
-
-                    // we have have visited both,
-                    // we pop parent and move a level up!
-                    parents.pop_back(); // last one is this nonleaf, pop it
-                    // the first parent contains a nullptr, such that we break when we move up from the root
-                    currNode = parents.back().m_parent;
-
+                    // we have have visited both children,
+                    // go to parent by popping back
+                    nodeStack.pop_back(); 
+                    
                 } else {
-                    // this is a leaf
+                    // currNode is a leaf
                     // if(visitedLeafs.insert(currNode).second==false){
                     //  ApproxMVBB_ERRORMSG("leaf has already been visited!")
                     // }
 
-                    // get at least k nearst  points in this leaf and merge with kNearest list
+                    // get at least k nearest  points in this leaf and merge with kNearest list
                     if(currNode->size()>0) {
                         kNearest.push(currNode->data()->begin(),currNode->data()->end());
                         // update max norm
                         maxDistSq = distComp(kNearest.top());
                     }
                     // finished with this leaf, got to parent!
-                    currNode = currParentInfo->m_parent;
-                    continue;
+                    nodeStack.pop_back();
                 }
-
-
+                
             }
         }
 
