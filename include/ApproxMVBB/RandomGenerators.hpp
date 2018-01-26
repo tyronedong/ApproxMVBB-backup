@@ -262,10 +262,10 @@ inline void XorShift128Plus::jump()
 
     uint64_t s0 = 0;
     uint64_t s1 = 0;
-    for (unsigned int i = 0; i < sizeof(JUMP) / sizeof(*JUMP); i++)
-        for (int b = 0; b < 64; b++)
+    for(unsigned int i = 0; i < sizeof(JUMP) / sizeof(*JUMP); i++)
+        for(int b = 0; b < 64; b++)
         {
-            if (JUMP[i] & 1ULL << b)
+            if(JUMP[i] & 1ULL << b)
             {
                 s0 ^= s[0];
                 s1 ^= s[1];
@@ -291,7 +291,7 @@ inline XorShift1024Star::XorShift1024Star()
 inline void XorShift1024Star::seed(uint64_t sd)
 {
     uint64_t ss = SplitMix64{sd}();
-    for (auto& v : s)
+    for(auto& v : s)
     {
         v = ss;
     }
@@ -301,7 +301,7 @@ inline void XorShift1024Star::seed(uint64_t sd)
 inline uint64_t XorShift1024Star::operator()()
 {
     const uint64_t s0 = s[p];
-    uint64_t s1 = s[p = (p + 1) & 15];
+    uint64_t s1       = s[p = (p + 1) & 15];
     s1 ^= s1 << 31;                            // a
     s[p] = s1 ^ s0 ^ (s1 >> 11) ^ (s0 >> 30);  // b,c
     return s[p] * UINT64_C(1181783497276652981);
@@ -330,16 +330,16 @@ inline void XorShift1024Star::jump()
                                     0x284600e3f30e38c3};
 
     uint64_t t[16] = {0};
-    for (unsigned int i = 0; i < sizeof(JUMP) / sizeof(*JUMP); i++)
-        for (int b = 0; b < 64; b++)
+    for(unsigned int i = 0; i < sizeof(JUMP) / sizeof(*JUMP); i++)
+        for(int b = 0; b < 64; b++)
         {
-            if (JUMP[i] & 1ULL << b)
-                for (int j = 0; j < 16; j++)
+            if(JUMP[i] & 1ULL << b)
+                for(int j = 0; j < 16; j++)
                     t[j] ^= s[(j + p) & 15];
             this->operator()();
         }
 
-    for (int j          = 0; j < 16; j++)
+    for(int j = 0; j < 16; j++)
         s[(j + p) & 15] = t[j];
 }
 }

@@ -18,6 +18,13 @@ brew tap homebrew/versions || echo "suppress failures in order to ignore warning
 
 # eigen3 needs gfortran
 brew install gcc || echo "suppress failures in order to ignore warnings"
+brew link --overwrite --dry-run gcc
+brew link --overwrite gcc
+
+brew install llvm || echo "suppress failures in order to ignore warnings"
+brew link --overwrite --dry-run llvm
+brew link --overwrite llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Cmake
 brew install cmake || echo "suppress failures in order to ignore warnings"
@@ -35,4 +42,4 @@ chmod +x $CHECKOUT_PATH/travis/install_dep.sh
 # "DEPENDECIES COMPLETE ================================================================="
 
 # Workaround for https://github.com/travis-ci/travis-ci/issues/6522
-set +e
+set +e # exit on errors off

@@ -22,23 +22,23 @@
 // Not part of library:
 #include "CPUTimer.hpp"
 
-ApproxMVBB_DEFINE_MATRIX_TYPES ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES
+ApproxMVBB_DEFINE_MATRIX_TYPES;
+ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES;
 
-    // Read in file
-    Vector3List
-    getPointsFromFile3D(std::string filePath)
+// Read in file
+Vector3List getPointsFromFile3D(std::string filePath)
 {
     std::ifstream file;           // creates stream myFile
     file.open(filePath.c_str());  // opens .txt file
 
-    if (!file.is_open())
+    if(!file.is_open())
     {  // check file is open, quit if not
         ApproxMVBB_ERRORMSG("Could not open file: " << filePath)
     }
 
     PREC a, b, c;
     Vector3List v;
-    while (file.good())
+    while(file.good())
     {
         file >> a >> b >> c;
         v.emplace_back(a, b, c);
@@ -50,13 +50,15 @@ ApproxMVBB_DEFINE_MATRIX_TYPES ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES
 /** Special point type with id*/
 struct MyPoint
 {
-    ApproxMVBB_DEFINE_MATRIX_TYPES Vector3* m_p;
+    ApproxMVBB_DEFINE_MATRIX_TYPES;
+    Vector3* m_p;
     unsigned int m_id;
 };
 /** Special point getter */
 struct MyPointGetter
 {
-    ApproxMVBB_DEFINE_MATRIX_TYPES static const Vector3& get(const MyPoint& p)
+    ApproxMVBB_DEFINE_MATRIX_TYPES;
+    static const Vector3& get(const MyPoint& p)
     {
         return *(p.m_p);
     }
@@ -91,7 +93,7 @@ void doKdTree(std::string file)
 
         PointListType t;
 
-        for (unsigned int i = 0; i < points.size(); ++i)
+        for(unsigned int i = 0; i < points.size(); ++i)
         {
             t.push_back(MyPoint{&points[i], i});
             aabb += points[i];

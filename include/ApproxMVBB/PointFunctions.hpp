@@ -29,12 +29,13 @@ namespace ApproxMVBB
 {
 namespace PointFunctions
 {
-ApproxMVBB_DEFINE_MATRIX_TYPES ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES
+ApproxMVBB_DEFINE_MATRIX_TYPES;
+ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES;
 
-    template <typename Derived, typename Gen>
-    void applyRandomRotTrans(MatrixBase<Derived>& points, Gen& g)
+template <typename Derived, typename Gen>
+void applyRandomRotTrans(MatrixBase<Derived>& points, Gen& g)
 {
-    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 3, Eigen::Dynamic)
+    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 3, Eigen::Dynamic);
     Quaternion q;
     q.coeffs() = q.coeffs().unaryExpr(g);  // TODO: Check if q=[0,0,0,0] is
                                            // correctly normalized !! otherwise
@@ -50,7 +51,7 @@ ApproxMVBB_DEFINE_MATRIX_TYPES ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES
 template <typename Derived>
 void applyRandomRotTrans(MatrixBase<Derived>& points)
 {
-    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 3, Eigen::Dynamic)
+    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 3, Eigen::Dynamic);
     Quaternion q;
     q.coeffs().setRandom();
     q.normalize();
@@ -71,7 +72,7 @@ template <typename VecT1, typename VecT2>
 inline bool almostEqualUlp(const VecT1& a, const VecT2& b /*, PREC eps = 1.0e-8*/)
 {
     bool ret = true;
-    for (unsigned int i = 0; i < a.size(); i++)
+    for(unsigned int i = 0; i < a.size(); i++)
     {
         ret = ret && FloatingPoint<PREC>(a(i)).AlmostEquals(FloatingPoint<PREC>(b(i)));
     }
@@ -88,9 +89,9 @@ inline bool equal(const VecT1& a, const VecT2& b)
 template <typename VecT1, typename VecT2, typename VecT3>
 inline int orient2d(const VecT1& a, const VecT2& b, const VecT3& c)
 {
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2)
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2);
 
     PREC f_A = GeometryPredicates::orient2d(
         const_cast<double*>(a.data()), const_cast<double*>(b.data()), const_cast<double*>(c.data()));
@@ -102,9 +103,9 @@ inline int orient2d(const VecT1& a, const VecT2& b, const VecT3& c)
 template <typename VecT1, typename VecT2, typename VecT3>
 inline bool leftTurn(const VecT1& a, const VecT2& b, const VecT3& c)
 {
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2)
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2);
     return orient2d(a, b, c) > 0;
 }
 
@@ -112,17 +113,17 @@ inline bool leftTurn(const VecT1& a, const VecT2& b, const VecT3& c)
 template <typename VecT1, typename VecT2, typename VecT3>
 inline int collinearAreOrderedAlongLine(const VecT1& a, const VecT2& b, const VecT3& c)
 {
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2)
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT3, 2);
 
-    if (a(0) < b(0))
+    if(a(0) < b(0))
         return !(c(0) < b(0));
-    if (b(0) < a(0))
+    if(b(0) < a(0))
         return !(b(0) < c(0));
-    if (a(1) < b(1))
+    if(a(1) < b(1))
         return !(c(1) < b(1));
-    if (b(1) < a(1))
+    if(b(1) < a(1))
         return !(b(1) < c(1));
     return true;  // a==b
 }
@@ -131,11 +132,11 @@ inline int collinearAreOrderedAlongLine(const VecT1& a, const VecT2& b, const Ve
 template <typename VecT1, typename VecT2>
 inline PREC getAngle(const VecT1& a, const VecT2& b)
 {
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2)
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2);
     Vector2 t  = b - a;
     PREC angle = std::atan2(t(1), t(0));
-    if (angle < 0.0)
+    if(angle < 0.0)
     {
         angle += 2 * M_PI;
     }
@@ -145,8 +146,8 @@ inline PREC getAngle(const VecT1& a, const VecT2& b)
 template <typename VecT1, typename VecT2>
 Vector2 intersectLines(const VecT1& p1, PREC ang1, const VecT2& p2, PREC ang2, PREC eps = 1e-10)
 {
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2)
-    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2)
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT1, 2);
+    EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(VecT2, 2);
     using namespace std;
     // Two lines p1 + a*t1 =  p2 + b*t2;
     // [-a, b]^-1 * (p1-p2) = [t1;t2]
@@ -165,9 +166,9 @@ Vector2 intersectLines(const VecT1& p1, PREC ang1, const VecT2& p2, PREC ang2, P
 
     PREC det = a(1) * bx - a(0) * by;
 
-    if (det == 0.0)
+    if(det == 0.0)
     {  // lines are collinear
-        if (abs(nom) < eps)
+        if(abs(nom) < eps)
         {  // if the two lines are almost identical! rot( p1-p2,
             // 90 degrees) almost orthogonal to b
             return p1;
@@ -184,15 +185,15 @@ Vector2 intersectLines(const VecT1& p1, PREC ang1, const VecT2& p2, PREC ang2, P
 template <typename Derived>
 inline unsigned int minPointYX(const MatrixBase<Derived>& points)
 {
-    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic)
+    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic);
     unsigned int index = 0;
-    for (unsigned int i = 1; i < points.cols(); ++i)
+    for(unsigned int i = 1; i < points.cols(); ++i)
     {
-        if (points(1, i) < points(1, index))
+        if(points(1, i) < points(1, index))
         {
             index = i;
         }
-        else if (points(1, i) == points(1, index) && points(0, i) < points(0, index))
+        else if(points(1, i) == points(1, index) && points(0, i) < points(0, index))
         {
             index = i;
         }
@@ -204,15 +205,15 @@ inline unsigned int minPointYX(const MatrixBase<Derived>& points)
 template <typename Derived>
 inline unsigned int minPointXY(const MatrixBase<Derived>& points)
 {
-    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic)
+    EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic);
     unsigned int index = 0;
-    for (unsigned int i = 1; i < points.cols(); ++i)
+    for(unsigned int i = 1; i < points.cols(); ++i)
     {
-        if (points(0, i) < points(0, index))
+        if(points(0, i) < points(0, index))
         {
             index = i;
         }
-        else if (points(0, i) == points(0, index) && points(1, i) < points(1, index))
+        else if(points(0, i) == points(0, index) && points(1, i) < points(1, index))
         {
             index = i;
         }
@@ -234,7 +235,7 @@ auto estimateDiameter(const MatrixBase<Derived>& points,
         // Construct pointer list
         auto size      = points.cols();
     PREC const** pList = new PREC const*[size];
-    for (decltype(size) i = 0; i < size; ++i)
+    for(decltype(size) i = 0; i < size; ++i)
     {
         pList[i] = points.col(i).data();
     }
@@ -248,12 +249,8 @@ auto estimateDiameter(const MatrixBase<Derived>& points,
     const MatrixMap<const Vector2d> p2(pairP.extremity2);
 
     ApproxMVBB_MSGLOG_L2("p1: " << p1.transpose() << std::endl
-                                << "p2: "
-                                << p2.transpose()
-                                << std::endl
-                                << " l: "
-                                << std::sqrt(pairP.squareDiameter)
-                                << std::endl);
+                                << "p2: " << p2.transpose() << std::endl
+                                << " l: " << std::sqrt(pairP.squareDiameter) << std::endl);
 
     delete[] pList;
     return {p1, p2};
@@ -263,15 +260,15 @@ class CompareByAngle
 {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-    ApproxMVBB_DEFINE_MATRIX_TYPES
+    ApproxMVBB_DEFINE_MATRIX_TYPES;
 
-        using PointData = std::pair<unsigned int, bool>;
+    using PointData = std::pair<unsigned int, bool>;
 
     /** Cosntructor, points is not a temporary, it accepts all sorts of matrix
-    * expressions,
-    * however the construction of MatrixRef<> might create a temporary but this is
-    * stored in m_p!
-    */
+     * expressions,
+     * however the construction of MatrixRef<> might create a temporary but this is
+     * stored in m_p!
+     */
     template <typename Derived>
     CompareByAngle(const MatrixBase<Derived>& points,
                    const Vector2& base,
@@ -279,7 +276,7 @@ public:
                    unsigned int& deletedPoints)
         : m_p(points), m_base(base), m_baseIdx(baseIdx), m_deletedPoints(deletedPoints)
     {
-        EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic)
+        EIGEN_STATIC_ASSERT_MATRIX_SPECIFIC_SIZE(Derived, 2, Eigen::Dynamic);
     }
 
     /** True if b is positively rotated from a, stricly weak ordering! */
@@ -309,10 +306,10 @@ public:
         // x-y Plane)
         // always  insert the smaller index first , and the larger second (as the
         // function is not completely symmetric!
-        if (idx1 < idx2)
+        if(idx1 < idx2)
         {
             int sgn = orient2d(m_base, m_p.col(idx1), m_p.col(idx2));
-            if (sgn != 0)
+            if(sgn != 0)
             {
                 return (sgn > 0);
             }
@@ -320,18 +317,18 @@ public:
         else
         {
             int sgn = orient2d(m_base, m_p.col(idx2), m_p.col(idx1));
-            if (sgn != 0)
+            if(sgn != 0)
             {
                 return (sgn < 0);
             }
         }
         // points are collinear
 
-        if (PointFunctions::equal(m_base, m_p.col(idx1)))
+        if(PointFunctions::equal(m_base, m_p.col(idx1)))
             return false;
-        if (PointFunctions::equal(m_base, m_p.col(idx2)))
+        if(PointFunctions::equal(m_base, m_p.col(idx2)))
             return true;
-        if (PointFunctions::equal(m_p.col(idx1), m_p.col(idx2)))
+        if(PointFunctions::equal(m_p.col(idx1), m_p.col(idx2)))
             return false;
 
         // if idx2 lies between mbase and idx1 then it should go after idx1

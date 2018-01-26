@@ -24,7 +24,8 @@ template <unsigned int Dim>
 class AABB
 {
 public:
-    ApproxMVBB_DEFINE_MATRIX_TYPES EIGEN_MAKE_ALIGNED_OPERATOR_NEW private :
+    ApproxMVBB_DEFINE_MATRIX_TYPES;
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW private :
 
         template <unsigned int D = Dim, bool = true>
         struct unite_impl
@@ -103,9 +104,9 @@ public:
 
     AABB(const VectorStat<Dim>& l, const VectorStat<Dim>& u) : m_minPoint(l), m_maxPoint(u)
     {
-        ApproxMVBB_ASSERTMSG((m_maxPoint.array() >= m_minPoint.array()).all(),
-                             "AABB initialized wrongly! min/max: " << m_minPoint.transpose() << "/"
-                                                                   << m_maxPoint.transpose());
+        ApproxMVBB_ASSERTMSG(
+            (m_maxPoint.array() >= m_minPoint.array()).all(),
+            "AABB initialized wrongly! min/max: " << m_minPoint.transpose() << "/" << m_maxPoint.transpose());
     }
 
     template <typename Derived>
@@ -219,7 +220,7 @@ public:
         typename ArrayStat<Dim>::Index idx;
         PREC ext = std::abs(e.maxCoeff(&idx)) * p;
 
-        if (ext < eps)
+        if(ext < eps)
         {  // extent of max axis almost zero, set all axis to
             // defaultExtent --> cube
             ext        = defaultExtent;
@@ -228,9 +229,9 @@ public:
         }
         else
         {
-            for (int i = 0; i < Dim; ++i)
+            for(int i = 0; i < Dim; ++i)
             {
-                if (i != idx && std::abs(e(i)) < ext)
+                if(i != idx && std::abs(e(i)) < ext)
                 {
                     m_minPoint(i) = c(i) - 0.5 * ext;
                     m_maxPoint(i) = c(i) + 0.5 * ext;
@@ -246,9 +247,9 @@ public:
         Vector3 c = center();
 
         PREC l = 0.5 * minExtent;
-        for (int i = 0; i < Dim; ++i)
+        for(int i = 0; i < Dim; ++i)
         {
-            if (std::abs(e(i)) < minExtent)
+            if(std::abs(e(i)) < minExtent)
             {
                 m_minPoint(i) = c(i) - l;
                 m_maxPoint(i) = c(i) + l;
@@ -263,10 +264,10 @@ public:
         Array3 e  = extent();
         Vector3 c = center();
 
-        for (unsigned int i = 0; i < Dim; ++i)
+        for(unsigned int i = 0; i < Dim; ++i)
         {
             PREC l = minExtent(i);
-            if (std::abs(e(i)) < l)
+            if(std::abs(e(i)) < l)
             {
                 m_minPoint(i) = c(i) - 0.5 * l;
                 m_maxPoint(i) = c(i) + 0.5 * l;
@@ -275,15 +276,15 @@ public:
     }
 
     /** Expands the selected axes \p axis to maximal value,
-    *  which simulates a box with infinite extent in this direction
-    *  \tparam MoveMax If true, the maximum value is moved to max value, otherwise
-    * the minimum value is moved to lowest.
-    */
+     *  which simulates a box with infinite extent in this direction
+     *  \tparam MoveMax If true, the maximum value is moved to max value, otherwise
+     * the minimum value is moved to lowest.
+     */
     template <bool MoveMax>
     void expandToMaxExtent(const unsigned int& axis)
     {
         ApproxMVBB_ASSERTMSG(axis < Dim, "axis >= Dim !");
-        if (!MoveMax)
+        if(!MoveMax)
         {
             m_minPoint(axis) = std::numeric_limits<PREC>::lowest();
         }

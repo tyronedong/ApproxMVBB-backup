@@ -23,8 +23,7 @@ int main(int argc, char** argv)
     ApproxMVBB::OOBB oobb = ApproxMVBB::approximateMVBB(points,
                                                         0.001,
                                                         500,
-                                                        5 /*increasing the grid size decreases speed */
-                                                        ,
+                                                        5, /*increasing the grid size decreases speed */
                                                         0,
                                                         5);
 
@@ -43,10 +42,15 @@ int main(int argc, char** argv)
     // To make all points inside the OOBB :
     ApproxMVBB::Matrix33 A_KI = oobb.m_q_KI.matrix().transpose();  // faster to store the transformation matrix first
     auto size                 = points.cols();
-    for (unsigned int i = 0; i < size; ++i)
+    for(unsigned int i = 0; i < size; ++i)
     {
         oobb.unite(A_KI * points.col(i));
     }
+
+    // To make the box have a minimum extent of greater 0.1:
+    // see also oobb.expandToMinExtentRelative(...)
+    oobb.expandToMinExtentAbsolute(0.1);
+
     std::cout << "OOBB with all point included: " << std::endl
               << "---> lower point in OOBB frame: " << oobb.m_minPoint.transpose() << std::endl
               << "---> upper point in OOBB frame: " << oobb.m_maxPoint.transpose() << std::endl;

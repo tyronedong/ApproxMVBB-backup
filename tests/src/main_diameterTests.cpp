@@ -35,7 +35,7 @@ void diameterTest(std::string name, const TMatrix& v, PREC epsilon = 0.001)
     auto pp = estimateDiameter<3>(v, epsilon);
     STOP_TIMER_SEC(count, start)
     std::cout << "Timings: " << count << " sec for " << v.cols() << " points" << std::endl;
-    std::cout << "End estimateDiam test " + name << std::endl;
+    std::cout << "End diameterTest " + name << std::endl;
 
     Matrix3Dyn diam(3, 2);
     diam.col(0) = pp.first;
@@ -61,7 +61,7 @@ void diameterTest(std::string name, const TMatrix& v, PREC epsilon = 0.001)
 
         EXPECT_TRUE(assertNearArray(v, inputPointsV)) << "input points not the same as valid ones";
     }
-    catch (ApproxMVBB::Exception& e)
+    catch(ApproxMVBB::Exception& e)
     {
         ASSERT_TRUE(false) << "Exception in checking inside test!: " << e.what() << std::endl;
     }
@@ -263,12 +263,12 @@ MY_TEST(DiameterTest, Plane)
 MY_TEST(DiameterTest, UnitPatches2D)
 {
     MY_TEST_RANDOM_STUFF(DiameterTest, UnitPatches2D);
-    for (int i = 0; i < 10; ++i)
+    for(int i = 0; i < 10; ++i)
     {
         ApproxMVBB::Matrix3Dyn t(3, 500);
         t = t.unaryExpr(f);
         t.row(2).setZero();
-        diameterTest(testName +"-Nr-" + std::to_string(i), t);
+        diameterTest(testName + "-Nr-" + std::to_string(i), t);
     }
 }
 
