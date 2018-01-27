@@ -1,15 +1,15 @@
 
 
 #The name of the project ====================================================================
-PROJECT("KdTreeFilteringExample")
+project("KdTreeFilteringExample")
 
 
 
-SET(SOURCE_FILES
+set(SOURCE_FILES
     src/main.cpp
 )
 
-SET(INCLUDE_FILES
+set(INCLUDE_FILES
     ${ApproxMVBB_INC}
 )
 
@@ -21,16 +21,16 @@ set(INCLUDE_DIRS
 
 include_directories(${INCLUDE_DIRS})
 
-ADD_EXECUTABLE(${PROJECT_NAME}  ${SOURCE_FILES} ${INCLUDE_FILES} )
+add_executable(${PROJECT_NAME}  ${SOURCE_FILES} ${INCLUDE_FILES} )
 target_link_libraries(${PROJECT_NAME} "ApproxMVBB" ${PUGIXML_LIBRARIES})
 
 add_definitions("-DApproxMVBB_SUPPORT_KDTREE")
-IF(ApproxMVBB_SUPPORT_XML)
+if(ApproxMVBB_SUPPORT_XML)
   add_definitions("-DApproxMVBB_SUPPORT_XML")
-ENDIF()
+endif()
 
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${PROJECT_NAME} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${PROJECT_NAME} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 
 # copy files

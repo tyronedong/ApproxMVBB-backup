@@ -1,5 +1,5 @@
 #The name of the project ====================================================================
-PROJECT("ApproxMVBBBenchmarks")
+project("ApproxMVBBBenchmarks")
 
 
 # Add GoogleTests ===========================================================================
@@ -19,10 +19,10 @@ download_project(PROJ                googlebenchmark
 add_subdirectory(${googlebenchmark_SOURCE_DIR} ${googlebenchmark_BINARY_DIR} EXCLUDE_FROM_ALL)
 
 # ==============================================================================================
-SET(ApproxMVBB_TESTS_OUTPUT_FILES_DIR "${PROJECT_BINARY_DIR}")
-SET(ApproxMVBB_TESTS_INPUT_FILES_DIR "${ApproxMVBB_ROOT_DIR}/tests/files")
-SET(ApproxMVBB_TESTS_INPUT_FILES_ADD_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files")
-SET(ApproxMVBB_TESTS_VALIDATION_FILES_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files/validation")
+set(ApproxMVBB_TESTS_OUTPUT_FILES_DIR "${PROJECT_BINARY_DIR}")
+set(ApproxMVBB_TESTS_INPUT_FILES_DIR "${ApproxMVBB_ROOT_DIR}/tests/files")
+set(ApproxMVBB_TESTS_INPUT_FILES_ADD_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files")
+set(ApproxMVBB_TESTS_VALIDATION_FILES_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files/validation")
 
 # WRITE CONFIGURATION FILE
 configure_file (
@@ -30,18 +30,16 @@ configure_file (
   ${PROJECT_BINARY_DIR}/include/TestConfig.hpp
 )
 
-SET(SOURCE_FILES
+set(SOURCE_FILES
     ${ApproxMVBB_SRC}
     ${ApproxMVBB_ROOT_DIR}/tests/src/CommonFunctions.cpp
 )
 
-SET(INCLUDE_FILES
+set(INCLUDE_FILES
     ${ApproxMVBB_INC}
     ${ApproxMVBB_ROOT_DIR}/tests/include/CommonFunctions.hpp
 )
 
-
-#include directories
 set(INCLUDE_DIRS
     ${ApproxMVBB_INC_DIRS}
     ${PROJECT_SOURCE_DIR}/include/
@@ -51,9 +49,9 @@ set(INCLUDE_DIRS
 
 include_directories(${INCLUDE_DIRS})
 
-SET(EXEC_NAME1 ${PROJECT_NAME}-MVBB)
-ADD_EXECUTABLE(${EXEC_NAME1}  ${PROJECT_SOURCE_DIR}/src/main_mvbbBenchmarks.cpp ${SOURCE_FILES} ${INCLUDE_FILES})
-TARGET_LINK_LIBRARIES(${EXEC_NAME1} ApproxMVBB benchmark)
+set(EXEC_NAME1 ${PROJECT_NAME}-MVBB)
+add_executable(${EXEC_NAME1}  ${PROJECT_SOURCE_DIR}/src/main_mvbbBenchmarks.cpp ${SOURCE_FILES} ${INCLUDE_FILES})
+target_link_libraries(${EXEC_NAME1} ApproxMVBB benchmark)
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME1} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME1} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()

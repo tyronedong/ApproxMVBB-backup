@@ -20,7 +20,7 @@ find_library (PUGIXML_LIBRARY
 
 # Support the REQUIRED and QUIET arguments, and set PUGIXML_FOUND if found.
 include (FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS (PugiXML DEFAULT_MSG PUGIXML_LIBRARY
+find_package_handle_standard_args(PugiXML DEFAULT_MSG PUGIXML_LIBRARY
                                    PUGIXML_INCLUDE_DIR)
 
 if (PUGIXML_FOUND)

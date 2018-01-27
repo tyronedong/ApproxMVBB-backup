@@ -31,10 +31,11 @@ brew install cmake || echo "suppress failures in order to ignore warnings"
 brew upgrade cmake
 
 echo "Path set to ${PATH}"
-cmake --version
 echo "CXX set to ${CXX}"
 echo "CC set to ${CC}"
+
 ${CXX} --version
+cmake --version
 
 chmod +x $CHECKOUT_PATH/travis/install_dep.sh
 . $CHECKOUT_PATH/travis/install_dep.sh

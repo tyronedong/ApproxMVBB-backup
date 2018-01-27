@@ -1,5 +1,5 @@
 #The name of the project ====================================================================
-PROJECT("ApproxMVBBTests")
+project("ApproxMVBBTests")
 
 
 # Add GoogleTests ===========================================================================
@@ -34,13 +34,13 @@ add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} EXCLUDE_FROM_
 # ==============================================================================================
 
 
-MARK_AS_ADVANCED( ApproxMVBB_TESTS_HIGH_PERFORMANCE)
-SET(ApproxMVBB_TESTS_HIGH_PERFORMANCE OFF CACHE BOOL "Switch on high-performance tests, these require a lot of RAM and AdditionalFiles need to be in place")
+mark_as_advanced( ApproxMVBB_TESTS_HIGH_PERFORMANCE)
+set(ApproxMVBB_TESTS_HIGH_PERFORMANCE OFF CACHE BOOL "Switch on high-performance tests, these require a lot of RAM and AdditionalFiles need to be in place")
 
-SET(ApproxMVBB_TESTS_OUTPUT_FILES_DIR "${PROJECT_BINARY_DIR}")
-SET(ApproxMVBB_TESTS_INPUT_FILES_DIR "${PROJECT_SOURCE_DIR}/files")
-SET(ApproxMVBB_TESTS_INPUT_FILES_ADD_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files")
-SET(ApproxMVBB_TESTS_VALIDATION_FILES_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files/validation")
+set(ApproxMVBB_TESTS_OUTPUT_FILES_DIR "${PROJECT_BINARY_DIR}")
+set(ApproxMVBB_TESTS_INPUT_FILES_DIR "${PROJECT_SOURCE_DIR}/files")
+set(ApproxMVBB_TESTS_INPUT_FILES_ADD_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files")
+set(ApproxMVBB_TESTS_VALIDATION_FILES_DIR "${ApproxMVBB_ROOT_DIR}/additional/tests/files/validation")
 
 # WRITE CONFIGURATION FILE
 configure_file (
@@ -50,14 +50,14 @@ configure_file (
 #=========================
 
 
-SET(SOURCE_FILES
+set(SOURCE_FILES
     ${ApproxMVBB_SRC}
     ${PROJECT_SOURCE_DIR}/src/CommonFunctions.cpp
     ${PROJECT_SOURCE_DIR}/src/TestFunctions.cpp
 
 )
 
-SET(INCLUDE_FILES
+set(INCLUDE_FILES
     ${ApproxMVBB_INC}
     ${PROJECT_SOURCE_DIR}/include/CommonFunctions.hpp
     ${PROJECT_SOURCE_DIR}/include/TestFunctions.hpp
@@ -76,59 +76,59 @@ include_directories(${INCLUDE_DIRS})
 
 # Define function to define compile definitions for all tests
 function(defineCompileDefs Target)
-    IF(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
+    if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
         target_compile_options(${Target} PRIVATE -DApproxMVBB_BUILD_TESTS )
-    ELSE()
+    else()
         target_compile_options(${Target} PRIVATE /DApproxMVBB_BUILD_TESTS )
-    ENDIF()
+    endif()
 endfunction()
 
 # ConvexHull
-SET(EXEC_NAME1 ${PROJECT_NAME}-ConvexHull)
-ADD_EXECUTABLE(${EXEC_NAME1}  ${PROJECT_SOURCE_DIR}/src/main_convexHullTests.cpp ${SOURCE_FILES} ${INCLUDE_FILES}   )
-TARGET_LINK_LIBRARIES(${EXEC_NAME1} ApproxMVBBForTestsOnly gtest gmock_main)
-ADD_DEPENDENCIES(build_and_test ${EXEC_NAME1})
+set(EXEC_NAME1 ${PROJECT_NAME}-ConvexHull)
+add_executable(${EXEC_NAME1}  ${PROJECT_SOURCE_DIR}/src/main_convexHullTests.cpp ${SOURCE_FILES} ${INCLUDE_FILES}   )
+target_link_libraries(${EXEC_NAME1} ApproxMVBBForTestsOnly gtest gmock_main)
+add_dependencies(build_and_test ${EXEC_NAME1})
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME1} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME1} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 defineCompileDefs(${EXEC_NAME1})
 
 # MinAreaRectangle
-SET(EXEC_NAME2 ${PROJECT_NAME}-MinAreaRect)
-ADD_EXECUTABLE(${EXEC_NAME2}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_minAreaRectangleTests.cpp )
-TARGET_LINK_LIBRARIES(${EXEC_NAME2} ApproxMVBBForTestsOnly gtest gmock_main )
-ADD_DEPENDENCIES(build_and_test ${EXEC_NAME2})
+set(EXEC_NAME2 ${PROJECT_NAME}-MinAreaRect)
+add_executable(${EXEC_NAME2}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_minAreaRectangleTests.cpp )
+target_link_libraries(${EXEC_NAME2} ApproxMVBBForTestsOnly gtest gmock_main )
+add_dependencies(build_and_test ${EXEC_NAME2})
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME2} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME2} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 defineCompileDefs(${EXEC_NAME2})
 
-SET(EXEC_NAME5 ${PROJECT_NAME}-Diameter)
-ADD_EXECUTABLE(${EXEC_NAME5}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_diameterTests.cpp )
-TARGET_LINK_LIBRARIES(${EXEC_NAME5} ApproxMVBBForTestsOnly gtest gmock_main )
-ADD_DEPENDENCIES(build_and_test ${EXEC_NAME5})
+set(EXEC_NAME5 ${PROJECT_NAME}-Diameter)
+add_executable(${EXEC_NAME5}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_diameterTests.cpp )
+target_link_libraries(${EXEC_NAME5} ApproxMVBBForTestsOnly gtest gmock_main )
+add_dependencies(build_and_test ${EXEC_NAME5})
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME5} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME5} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 defineCompileDefs(${EXEC_NAME5})
 
 # DiamterOOBB
-SET(EXEC_NAME3 ${PROJECT_NAME}-DiameterOOBB)
-ADD_EXECUTABLE(${EXEC_NAME3}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_diameterOOBBTests.cpp )
-TARGET_LINK_LIBRARIES(${EXEC_NAME3} ApproxMVBBForTestsOnly gtest gmock_main )
-ADD_DEPENDENCIES(build_and_test ${EXEC_NAME3})
+set(EXEC_NAME3 ${PROJECT_NAME}-DiameterOOBB)
+add_executable(${EXEC_NAME3}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_diameterOOBBTests.cpp )
+target_link_libraries(${EXEC_NAME3} ApproxMVBBForTestsOnly gtest gmock_main )
+add_dependencies(build_and_test ${EXEC_NAME3})
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME3} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME3} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 defineCompileDefs(${EXEC_NAME3})
 
 # MVBB
-SET(EXEC_NAME4 ${PROJECT_NAME}-MVBB)
-ADD_EXECUTABLE(${EXEC_NAME4}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_mvbbTests.cpp )
-TARGET_LINK_LIBRARIES(${EXEC_NAME4} ApproxMVBBForTestsOnly gtest gmock_main )
-ADD_DEPENDENCIES(build_and_test ${EXEC_NAME4})
+set(EXEC_NAME4 ${PROJECT_NAME}-MVBB)
+add_executable(${EXEC_NAME4}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${PROJECT_SOURCE_DIR}/src/main_mvbbTests.cpp )
+target_link_libraries(${EXEC_NAME4} ApproxMVBBForTestsOnly gtest gmock_main )
+add_dependencies(build_and_test ${EXEC_NAME4})
 if( NOT "${ApproxMVBB_DEPENDING_TARGETS}" STREQUAL "")
-    ADD_DEPENDENCIES(${EXEC_NAME4} ${ApproxMVBB_DEPENDING_TARGETS})
+    add_dependencies(${EXEC_NAME4} ${ApproxMVBB_DEPENDING_TARGETS})
 endif()
 defineCompileDefs(${EXEC_NAME4})
 
