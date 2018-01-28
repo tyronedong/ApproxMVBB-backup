@@ -45,14 +45,19 @@ macro(INCLUDE_ALL_ApproxMVBB_SOURCE
     )
 
     set(${INC}
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/AssertionDebug.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/ContainerTag.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/CPUTimer.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/Exception.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/FloatingPointComparision.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/LogDefines.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/MyContainerTypeDefs.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/MyMatrixTypeDefs.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/Platform.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/SfinaeMacros.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/StaticAssert.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/TypeDefs.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/TypeDefsPoints.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/Exception.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/StaticAssert.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/AssertionDebug.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/Platform.hpp
-
 
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/AABB.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/AngleFunctions.hpp
@@ -60,13 +65,14 @@ macro(INCLUDE_ALL_ApproxMVBB_SOURCE
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/ContainerFunctions.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/ConvexHull2D.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/GreatestCommonDivisor.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTree.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTreeXml.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/MakeCoordinateSystem.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/MinAreaRectangle.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/OOBB.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/PointFunctions.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/ProjectedPointSet.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTree.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTreeXml.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/RandomGenerators.hpp
 
         ${ApproxMVBB_DIAM_INC}
         ${ApproxMVBB_GEOMPRED_INC}
@@ -85,7 +91,10 @@ macro(INCLUDE_ALL_ApproxMVBB_SOURCE
 
     foreach(file ${${INC}})
         getIncludeInstallFolderPostfix(${file} postfix )
-        install( FILES ${file} DESTINATION include/${postfix} )
+        if("${postfix}" STREQUAL "")
+            message(FATAL_ERROR "wrong path ${PATH}")
+        endif()
+        install( FILES ${file} DESTINATION "include/${postfix}" )
     endforeach()    
 
 

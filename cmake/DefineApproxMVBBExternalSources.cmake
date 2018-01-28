@@ -14,6 +14,7 @@ macro(INCLUDE_DIAMETER_SOURCE SRC INC INCLUDE_DIRS
 
     set(${INC}
         ${ROOT_DIR}/include/ApproxMVBB/Diameter/EstimateDiameter.hpp
+        ${ROOT_DIR}/include/ApproxMVBB/Diameter/TypeSegment.hpp
     )
 
     set(${INCLUDE_DIRS}
@@ -61,7 +62,6 @@ macro(INCLUDE_GEOMETRYPREDICATES_SOURCE SRC
     )
 
     set(${INC}
-        ${ApproxMVBB_BINARY_DIR}/include/ApproxMVBB/GeometryPredicates/Config.hpp
         ${ROOT_DIR}/include/ApproxMVBB/GeometryPredicates/PredicatesInit.hpp
         ${ROOT_DIR}/include/ApproxMVBB/GeometryPredicates/Predicates.hpp
         ${ROOT_DIR}/include/ApproxMVBB/GeometryPredicates/Rounding.hpp

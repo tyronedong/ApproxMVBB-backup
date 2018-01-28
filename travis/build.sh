@@ -26,7 +26,6 @@ if [ ! -d $ROOT_PATH/build ]; then mkdir $ROOT_PATH/build; fi
 cd $ROOT_PATH/build
 cmake $CHECKOUT_PATH  -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
                       -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-                      -DMYPROJECT_DONTSET_COMPILER_FLAGS_INTERNAL=ON \
                       -DCMAKE_CXX_FLAGS="${CXX_FLAGS}" \
                       -DCMAKE_EXE_LINKER_FLAGS="${CXX_LINKER_FLAGS}" \
                       -DApproxMVBB_FORCE_MSGLOG_LEVEL=2
@@ -44,8 +43,8 @@ cmake $CHECKOUT_PATH/example/libraryUsage -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PAT
                                           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
                                           -DCMAKE_CXX_FLAGS="${CXX_FLAGS}" \
                                           -DCMAKE_EXE_LINKER_FLAGS="${CXX_LINKER_FLAGS}" \
-                                          -DApproxMVBB_DIR=$INSTALL \
-                                          -DApproxMVBB_USE_OPENMP=OFF
+                                          -DApproxMVBB_DIR=$INSTALL
+                                          -DPugiXML_DIR=$INSTALL
 make VERBOSE=1
 cd $ROOT_PATH
 

@@ -11,8 +11,7 @@ function(define_dependencies)
     endif()
 
     if(${ApproxMVBB_FIND_REQUIRED_SUPPORT_XML})
-        set(PugiXML_DIR "@PugiXML_DIR@")
-        find_dependency(PugiXML)
+        find_dependency(PugiXML HINT "@PugiXML_DIR@")
     endif()
 
     if(${ApproxMVBB_FIND_REQUIRED_SUPPORT_KDTREE})

@@ -128,10 +128,10 @@ install(FILES "${ApproxMVBB_LICENSE_FILE}" "${ApproxMVBB_README_FILE}"
         PERMISSIONS OWNER_READ)
 
 # INSTALLING FILES ================================================================================================================================
-install(DIRECTORY ${ApproxMVBB_INCLUDE_DIR}  DESTINATION "include"
-        FILE_PERMISSIONS      OWNER_READ                           GROUP_READ               WORLD_READ
-        DIRECTORY_PERMISSIONS OWNER_READ  OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-        FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h" PATTERN "*.cmake" EXCLUDE)
+# install(DIRECTORY ${ApproxMVBB_INCLUDE_DIR}  DESTINATION "include"
+#         FILE_PERMISSIONS      OWNER_READ                           GROUP_READ               WORLD_READ
+#         DIRECTORY_PERMISSIONS OWNER_READ  OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+#         FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h" PATTERN "*.cmake" EXCLUDE)
 
 # message( STATUS "Installing external include folders:" ${ApproxMVBB_EXTERNAL_INCLUDE_DIRS} " to ${ApproxMVBB_INC_INSTALL_DIR}/ApproxMVBB")
 # install(DIRECTORY  ${ApproxMVBB_EXTERNAL_INCLUDE_DIRS}
