@@ -1,9 +1,9 @@
 sudo: required
 language: cpp
 
-cache:
-  directories:
-  - ${APPROXMVBB_CACHE_DIR}
+# cache:
+#   directories:
+#   - ${APPROXMVBB_CACHE_DIR}
 
 matrix:
   include:
@@ -73,7 +73,7 @@ install:
     wget --no-check-certificate http://www.cmake.org/files/$version/$name
     chmod a+x $name
     sudo ./$name --skip-license --prefix=/usr/local/
-    
+
   - chmod +x $CHECKOUT_PATH/travis/install_${TRAVIS_OS_NAME}.sh
   - . $CHECKOUT_PATH/travis/install_${TRAVIS_OS_NAME}.sh
 
