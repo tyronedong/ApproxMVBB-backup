@@ -28,6 +28,7 @@ if [ ! -d $ROOT_PATH/build ]; then mkdir $ROOT_PATH/build; fi
 cd $ROOT_PATH/build
 cmake $CHECKOUT_PATH  -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
                       -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+                      -DCMAKE_VERBOSE_MAKEFILE=ON \
                       -DApproxMVBB_FORCE_MSGLOG_LEVEL=2
 make VERBOSE=1
 make install
@@ -41,6 +42,7 @@ INSTALL=$(find $ROOT_PATH/build/install/lib/cmake/* -type d)
 echo "Install dir= $INSTALL"
 cmake $CHECKOUT_PATH/example/libraryUsage -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
                                           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+                                          -DCMAKE_VERBOSE_MAKEFILE=ON \
                                           -DApproxMVBB_DIR=$INSTALL
 make VERBOSE=1
 cd $ROOT_PATH
