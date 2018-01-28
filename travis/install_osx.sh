@@ -8,7 +8,7 @@ cd $ROOT_PATH
 
 #install prefix and path
 export INSTALL_PREFIX="$APPROXMVBB_CACHE_DIR"
-export PATH="$PATH:$INSTALL_PREFIX/bin"
+export PATH="$INSTALL_PREFIX/bin:$PATH"
 
 # travis bug: https://github.com/travis-ci/travis-ci/issues/6307
 # rvm get head || true

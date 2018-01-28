@@ -5,8 +5,15 @@ set -e # exit on error
 
 # "DEPENDECIES ========================================================================"
 
+#install a newer cmake since at this time Travis only has version 2.8.7
+version="v3.10"
+name="cmake-3.10.2-Linux-x86_64.sh"
+wget --no-check-certificate http://www.cmake.org/files/$version/$name
+chmod a+x $name
+sudo ./$name --skip-license --prefix=/usr/local/
+
 export INSTALL_PREFIX="$APPROXMVBB_CACHE_DIR"
-export PATH="$PATH:$INSTALL_PREFIX/bin"
+export PATH="$INSTALL_PREFIX/bin:/usr/local/bin:$PATH"
 
 cd $ROOT_PATH
 
@@ -18,14 +25,8 @@ echo "CXX set to ${CXX}"
 echo "CC set to ${CC}"
 
 ${CXX} --version
-
-#install a newer cmake since at this time Travis only has version 2.8.7
-version="v3.10"
-name="cmake-3.10.2-Linux-x86_64.sh"
-wget --no-check-certificate http://www.cmake.org/files/$version/$name
-chmod a+x $name
-sudo ./$name --skip-license --prefix=/usr/local/
 cmake --version
+echo "cmake at $(which cmake)"
 
 chmod +x $CHECKOUT_PATH/travis/install_dep.sh
 # run the command in this process -> env varibales!
