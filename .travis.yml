@@ -34,6 +34,7 @@ matrix:
             - llvm-toolchain-precise
 
   - env: APPROXMVBB_CACHE_DIR="$HOME/ApproxMVBBCache"
+    os: osx
     osx_image: xcode9.2
     compiler: clang
 
