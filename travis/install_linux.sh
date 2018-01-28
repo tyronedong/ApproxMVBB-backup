@@ -18,6 +18,13 @@ echo "CXX set to ${CXX}"
 echo "CC set to ${CC}"
 
 ${CXX} --version
+
+#install a newer cmake since at this time Travis only has version 2.8.7
+version="v3.10"
+name="cmake-3.10.2-Linux-x86_64.sh"
+wget --no-check-certificate http://www.cmake.org/files/$version/$name
+chmod a+x $name
+sudo ./$name --skip-license --prefix=/usr/local/
 cmake --version
 
 chmod +x $CHECKOUT_PATH/travis/install_dep.sh
