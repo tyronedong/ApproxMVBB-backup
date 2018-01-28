@@ -1,9 +1,9 @@
 sudo: required
 language: cpp
 
-# cache:
-#   directories:
-#   - ${APPROXMVBB_CACHE_DIR}
+cache:
+  directories:
+  - ${APPROXMVBB_CACHE_DIR}
 
 matrix:
   include:
