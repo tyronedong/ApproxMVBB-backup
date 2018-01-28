@@ -1,5 +1,5 @@
 #The CMake Minimum version that is required.
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/;${CMAKE_MODULE_PATH}")
 message(STATUS "Module path is now set to: " ${CMAKE_MODULE_PATH} )
@@ -12,7 +12,7 @@ if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
         set(ApproxMVBBProjectName  "${ApproxMVBBProjectName}-${PROJECTNAMEPREFIX}")
 endif()
 message(STATUS "Project name is: " ${ApproxMVBBProjectName})
-project(${ApproxMVBBProjectName})
+project(${ApproxMVBBProjectName} LANGUAGES CXX C)
 
 set(ApproxMVBB_BINARY_DIR ${PROJECT_BINARY_DIR})
 set(ApproxMVBB_ROOT_DIR   ${PROJECT_SOURCE_DIR})
@@ -40,65 +40,6 @@ set(ApproxMVBB_ROOT_DIR   ${PROJECT_SOURCE_DIR})
 # so far we manually set it to double precision in the Predicates,
 # on Windows (64bit) we cannot change FPU precision, so we use the sse flag to ensure only "double precision"
 #=======================================================================
-
-message(STATUS "Compiler ID is: " ${CMAKE_CXX_COMPILER_ID})
-if(NOT MYPROJECT_DONTSET_COMPILER_FLAGS_INTERNAL)
-	if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
-
-		set(MYPROJECT_DONTSET_COMPILER_FLAGS_INTERNAL TRUE CACHE INTERNAL "x" FORCE)
-		message(STATUS "Setting Values for GNU")
-		set(CMAKE_C_FLAGS "-fmessage-length=0 -fmax-errors=50" CACHE STRING "Flags for C Compiler" FORCE)
-		set(CMAKE_CXX_FLAGS "-std=c++11 -fmax-errors=50 -Werror=return-type" CACHE STRING "Flags for CXX Compiler" FORCE)
-		set(CMAKE_CXX_FLAGS_DEBUG          "-g -fsanitize=address -Wall -Wpedantic -Wno-char-subscripts" CACHE STRING "Flags for CXX Compiler for debug builds" FORCE)
-
-	elseif( ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" )
-
-		message(STATUS "Setting Values for Clang")
-		set(MYPROJECT_DONTSET_COMPILER_FLAGS_INTERNAL TRUE CACHE INTERNAL "x" FORCE)
-		set(CMAKE_C_FLAGS                "" CACHE STRING "Flags for C Compiler" FORCE)
-		set(CMAKE_C_FLAGS_DEBUG          "-g -Weverything" CACHE STRING "Flags for C Compiler for debug builds" FORCE)
-		set(CMAKE_C_FLAGS_MINSIZEREL     "-Os -DNDEBUG -w" CACHE STRING "Flags for C Compiler for release minsize builds" FORCE)
-		set(CMAKE_C_FLAGS_RELEASE        "-O3 -DNDEBUG -w" CACHE STRING "Flags for C Compiler for release builds" FORCE)
-		set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g" CACHE STRING "Flags for C Compiler for release builds with debug info" FORCE)
-
-		set(CMAKE_CXX_FLAGS                "-std=c++11 -Werror=return-type" CACHE STRING "Flags for CXX Compiler" FORCE)
-		set(CMAKE_CXX_FLAGS_DEBUG          "-g -fsanitize=leak -fsanitize=address -Weverything -Wpedantic -Wno-deprecated-register -Wno-documentation -Wno-comment -Wno-float-equal -Wno-deprecated -Wno-c++98-compat -Wno-unused-macros" CACHE STRING "Flags for CXX Compiler for debug builds" FORCE)
-		set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG -w" CACHE STRING "Flags for CXX Compiler for release minsize builds" FORCE)
-		set(CMAKE_CXX_FLAGS_RELEASE        "-O3 -DNDEBUG -w" CACHE STRING "Flags for CXX Compiler for release builds" FORCE)
-		set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g" CACHE STRING "Flags for CXX Compiler for release builds with debug info" FORCE)
-
-        # SET(CMAKE_AR      "/usr/bin/local/llvm-ar" CACHE STRING "archiver" FORCE )
-        # SET(CMAKE_LINKER  "/usr/bin/local/llvm-ld" CACHE STRING "linker tool" FORCE )
-        # SET(CMAKE_NM      "/usr/bin/local/llvm-nm" CACHE STRING "nm tool" FORCE )
-        # SET(CMAKE_OBJDUMP "/usr/bin/local/llvm-objdump" CACHE STRING "objdump tool" FORCE )
-        # SET(CMAKE_RANLIB  "/usr/bin/local/llvm-ranlib" CACHE STRING "ranlib tool" FORCE )
-
-	elseif( ${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel" )
-
-        message(STATUS "Setting Values for Intel")
-		set(MYPROJECT_DONTSET_COMPILER_FLAGS_INTERNAL TRUE CACHE INTERNAL "x" FORCE)
-		set(CMAKE_C_FLAGS                "" CACHE STRING "Flags for C Compiler" FORCE)
-		set(CMAKE_C_FLAGS_DEBUG          "-g -Wall" CACHE STRING "Flags for C Compiler for debug builds" FORCE)
-		set(CMAKE_C_FLAGS_MINSIZEREL     "-Os -DNDEBUG" CACHE STRING "Flags for C Compiler for release minsize builds" FORCE)
-		set(CMAKE_C_FLAGS_RELEASE        "-O3 -DNDEBUG" CACHE STRING "Flags for C Compiler for release builds" FORCE)
-		set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g" CACHE STRING "Flags for C Compiler for release builds with debug info" FORCE)
-
-		set(CMAKE_CXX_FLAGS                "-std=c++11 " CACHE STRING "Flags for CXX Compiler" FORCE)
-		set(CMAKE_CXX_FLAGS_DEBUG          "-g -Wall" CACHE STRING "Flags for CXX Compiler for debug builds" FORCE)
-		set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG" CACHE STRING "Flags for CXX Compiler for release minsize builds" FORCE)
-		set(CMAKE_CXX_FLAGS_RELEASE        "-O3 -DNDEBUG" CACHE STRING "Flags for CXX Compiler for release builds" FORCE)
-		set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g" CACHE STRING "Flags for CXX Compiler for release builds with debug info" FORCE)
-
-  elseif( ${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC" )
-    message(WARNING "MSVC is partially supported (Visual Studio 2013 Update 5), trying to set compiler flags anyway!")
-    # add some flags
-		set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "/arch:SSE2" CACHE STRING "Flags for CXX Compiler" FORCE)
-    # We cannot control the FPU unit in 64bit mode, this flag makes MSVC to not use x87 stuff in 64bit (or 32bit) mode
-    # so no extended precision should be used, if that does not work, there is the flag /fp:strict
-		# NOTE: SSE is already enabled for x64 compiler
-		# as per http://stackoverflow.com/questions/1067630/sse2-option-in-visual-c-x64
-  endif()
-endif()
 
 # Add the ccache to the build system
 if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
@@ -135,7 +76,7 @@ mark_as_advanced( ApproxMVBB_BUILD_LIBRARY )
 set(ApproxMVBB_BUILD_LIBRARY ON CACHE BOOL "Build a shared library")
 
 mark_as_advanced( ApproxMVBB_BUILD_TESTS)
-set(ApproxMVBB_BUILD_TESTS OFF CACHE BOOL "Build the tests")
+set(ApproxMVBB_BUILD_TESTS ON CACHE BOOL "Build the tests")
 
 mark_as_advanced( ApproxMVBB_BUILD_BENCHMARKS)
 set(ApproxMVBB_BUILD_BENCHMARKS OFF CACHE BOOL "Build the benchmarks (only meaningful in Release!)")
@@ -147,52 +88,52 @@ mark_as_advanced( ApproxMVBB_FORCE_MSGLOG_LEVEL)
 set(ApproxMVBB_FORCE_MSGLOG_LEVEL "0" CACHE STRING "Force the message log level (0-3), 0 = use deubg/release settings in LogDefines.hpp!")
 
 mark_as_advanced( ApproxMVBB_USE_OPENMP)
-set(ApproxMVBB_USE_OPENMP ON CACHE BOOL "Try to use OpenMp for parallel speedup")
+set(ApproxMVBB_USE_OPENMP OFF CACHE BOOL "Try to use OpenMp for parallel speedup")
 
 mark_as_advanced( ApproxMVBB_BUILD_LIBRARY_STATIC  )
 set(ApproxMVBB_BUILD_LIBRARY_STATIC OFF CACHE BOOL "Build a static library")
+
+mark_as_advanced(ApproxMVBB_KDTREE_SUPPORT )
+set(ApproxMVBB_KDTREE_SUPPORT ON CACHE BOOL "Build library with KDTree support.")
+mark_as_advanced(ApproxMVBB_XML_SUPPORT )
+set(ApproxMVBB_XML_SUPPORT ON CACHE BOOL "Build library with XML support.")
+
 #=======================================================================
 
 # Dependencies =========================================================
-# Define Eigen
 find_package(Eigen3 REQUIRED)
-set(EIGEN_INCLUDE_DIR ${EIGEN3_INCLUDE_DIR})
-list(APPEND ApproxMVBB_INC_DIRS_DEP ${EIGEN_INCLUDE_DIR})
+add_library(eigenLib INTERFACE IMPORTED)
+set_property(TARGET eigenLib PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${EIGEN3_INCLUDE_DIR})
+list(APPEND ApproxMVBB_LIBS_DEP_PUBLIC eigenLib)
 
-
-# Try to find Meta and PugiXML if possible
-find_package(Meta)
-if(META_FOUND)
-    list(APPEND ApproxMVBB_INC_DIRS_DEP ${Meta_INCLUDE_DIR})
-    list(APPEND ApproxMVBB_DEPENDING_TARGETS_DEP ${Meta_TARGET})
-    set(ApproxMVBB_SUPPORT_KDTREE ON)
+if(${ApproxMVBB_KDTREE_SUPPORT})
+    find_package(Meta REQUIRED)
+    add_library(metaLib INTERFACE IMPORTED)
+    set_property(TARGET metaLib PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${Meta_INCLUDE_DIR})
+    if( NOT ${Meta_TARGET} STREQUAL "")
+        add_dependencies(metaLib ${Meta_TARGET})
+    endif()
 endif()
 
-find_package(PugiXML)
-if(PUGIXML_FOUND)
-    list(APPEND ApproxMVBB_INC_DIRS_DEP ${PUGIXML_INCLUDE_DIR} )
-    list(APPEND ApproxMVBB_LIBRARIES_DEP ${PUGIXML_LIBRARIES})
-    set(ApproxMVBB_SUPPORT_XML ON)
+if(${ApproxMVBB_XML_SUPPORT})
+    find_package(PugiXML REQUIRED)
 endif()
 
 if(ApproxMVBB_USE_OPENMP)
-
     include(ProcessorCount)
     ProcessorCount(NPROCESSES)
 
     find_package(OpenMP)
     if(OpenMP_FOUND)
-        set(MYPROJECT_CXX_FLAGS "${MYPROJECT_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+        list(APPEND ApproxMVBB_LIBS_DEP_PRIVATE OpenMP::OpenMP_CXX)
         set(ApproxMVBB_OPENMP_SUPPORT ON)
 
         mark_as_advanced( ApproxMVBB_OPENMP_USE_NTHREADS)
         set(ApproxMVBB_OPENMP_USE_NTHREADS OFF CACHE BOOL "If the number of threads should be fixed, otherwise determined at runtime!")
-
         if(ApproxMVBB_OPENMP_USE_NTHREADS)
             set(ApproxMVBB_OPENMP_NTHREADS ${NPROCESSES} CACHE STRING "The number of threads to use.")
             mark_as_advanced( ApproxMVBB_OPENMP_NTHREADS )
         endif()
-
     else()
         set(ApproxMVBB_OPENMP_SUPPORT OFF)
     endif()
@@ -236,6 +177,7 @@ else(WINDOWS)
 endif()
 
 # Define all MVBB Source files
+include(SetTargetCompileOptions)
 include(DefineApproxMVBBSources)
 set(ApproxMVBB_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/ApproxMVBB")
 set(ApproxMVBB_EXTERNAL_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/external/Diameter/include/ApproxMVBB"
@@ -251,9 +193,7 @@ include_all_approxmvbb_source(ApproxMVBB_SRC
 set(ApproxMVBB_LICENSE_FILE "${CMAKE_CURRENT_SOURCE_DIR}/COPYING")
 set(ApproxMVBB_README_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 
-set(ApproxMVBB_LINK_LIBS ${ApproxMVBB_LIBRARIES_DEP})
-message(STATUS "Linking Libs: ${ApproxMVBB_LINK_LIBS}")
-list(APPEND ApproxMVBB_DEPENDING_TARGETS ${ApproxMVBB_DEPENDING_TARGETS_DEP})
+message(STATUS "Dependecy Libs (public): ${ApproxMVBB_LIBS_DEP_PUBLIC}")
 
 if(ApproxMVBB_BUILD_LIBRARY)
     add_subdirectory(lib)

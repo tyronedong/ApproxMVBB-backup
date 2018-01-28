@@ -34,5 +34,5 @@
         "unordered_set": "cpp",
         "typeinfo": "cpp"
     },
-    "cmake.configureArgs": [-DNO]
+    "cmake.configureArgs": ["-DPugiXML_DIR=/usr/local/opt/pugixml/lib/cmake/pugixml"]
 }

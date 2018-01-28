@@ -47,6 +47,7 @@ macro(INCLUDE_ALL_ApproxMVBB_SOURCE
     set(${INC}
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/MyMatrixTypeDefs.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/TypeDefs.hpp
+        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/TypeDefsPoints.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/Exception.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/StaticAssert.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/Common/AssertionDebug.hpp
@@ -66,7 +67,6 @@ macro(INCLUDE_ALL_ApproxMVBB_SOURCE
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/ProjectedPointSet.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTree.hpp
         ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/KdTreeXml.hpp
-        ${ApproxMVBB_ROOT_DIR}/include/ApproxMVBB/TypeDefsPoints.hpp
 
         ${ApproxMVBB_DIAM_INC}
         ${ApproxMVBB_GEOMPRED_INC}

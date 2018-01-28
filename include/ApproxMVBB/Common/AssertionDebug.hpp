@@ -19,27 +19,27 @@
 #include ApproxMVBB_Exception_INCLUDE_FILE
 
 #ifndef NDEBUG
-// Debug!
-/**
- * @brief An Assert Macro to use within C++ code.
- * @param condition The condition which needs to be truem otherwise an assertion
- * is thrown!
- */
-#define ApproxMVBB_ASSERTMSG(condition, message) \
-    {                                            \
-        if(!(condition))                         \
-        {                                        \
-            ApproxMVBB_ERRORMSG(message)         \
-        }                                        \
-    }
+    // Debug!
+    /**
+     * @brief An Assert Macro to use within C++ code.
+     * @param condition The condition which needs to be truem otherwise an assertion
+     * is thrown!
+     */
+#    define ApproxMVBB_ASSERTMSG(condition, message) \
+        {                                            \
+            if(!(condition))                         \
+            {                                        \
+                ApproxMVBB_ERRORMSG(message)         \
+            }                                        \
+        }
 #else
-#define ApproxMVBB_ASSERTMSG(condition, message) \
-    {                                            \
-        if(!(condition))                         \
-        {                                        \
-            ApproxMVBB_ERRORMSG(message)         \
-        }                                        \
-    }
+#    define ApproxMVBB_ASSERTMSG(condition, message) \
+        {                                            \
+            if(!(condition))                         \
+            {                                        \
+                ApproxMVBB_ERRORMSG(message)         \
+            }                                        \
+        }
 #endif
 
 #define ApproxMVBB_WARNINGMSG(condition, message)                                   \
