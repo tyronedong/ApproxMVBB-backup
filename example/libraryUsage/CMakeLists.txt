@@ -12,4 +12,4 @@ find_package(ApproxMVBB REQUIRED COMPONENTS XML_SUPPORT KDTREE_SUPPORT)
 
 # add simple executable
 add_executable(libraryUsage ./main.cpp)
-target_link_libraries(libraryUsage ApproxMVBB::Core ApproxMVBB::KdTreeSupport)
+target_link_libraries(libraryUsage ApproxMVBB::Core ApproxMVBB::KdTreeSupport ApproxMVBB::XMLSupport)
