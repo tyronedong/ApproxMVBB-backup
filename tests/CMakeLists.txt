@@ -70,42 +70,35 @@ macro(defineTarget TARGETNAME)
         target_compile_options(${TARGETNAME} PRIVATE /DApproxMVBB_BUILD_TESTS )
     endif()
 
-endmacro()
-
-# ConvexHull
-set(EXEC_NAME1 ${PROJECT_NAME}-ConvexHull)
-add_executable(${EXEC_NAME1}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_convexHullTests.cpp ${SOURCE_FILES} ${INCLUDE_FILES}   )
-defineTarget(${EXEC_NAME1})
-
-# MinAreaRectangle
-set(EXEC_NAME2 ${PROJECT_NAME}-MinAreaRect)
-add_executable(${EXEC_NAME2}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_minAreaRectangleTests.cpp )
-defineTarget(${EXEC_NAME2})
-
-set(EXEC_NAME5 ${PROJECT_NAME}-Diameter)
-add_executable(${EXEC_NAME5}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_diameterTests.cpp )
-defineTarget(${EXEC_NAME5})
-
-# DiamterOOBB
-set(EXEC_NAME3 ${PROJECT_NAME}-DiameterOOBB)
-add_executable(${EXEC_NAME3}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_diameterOOBBTests.cpp )
-defineTarget(${EXEC_NAME3})
-
-# MVBB
-set(EXEC_NAME4 ${PROJECT_NAME}-MVBB)
-add_executable(${EXEC_NAME4}  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_mvbbTests.cpp )
-defineTarget(${EXEC_NAME4})
-
-# Copy python scripts
-add_custom_command(TARGET ${EXEC_NAME1} ${EXEC_NAME2} ${EXEC_NAME3} ${EXEC_NAME4} ${EXEC_NAME5} POST_BUILD
+    add_custom_command(TARGET ${TARGETNAME} POST_BUILD
     COMMAND
           ${CMAKE_COMMAND}
           -E
-          copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/python/ ${PROJECT_BINARY_DIR}
-)
+          copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/python/ ${PROJECT_BINARY_DIR})
 
-add_test(NAME    ${EXEC_NAME1} COMMAND ${EXEC_NAME1})
-add_test(NAME    ${EXEC_NAME2} COMMAND ${EXEC_NAME2})
-add_test(NAME    ${EXEC_NAME5} COMMAND ${EXEC_NAME5})
-add_test(NAME    ${EXEC_NAME3} COMMAND ${EXEC_NAME3})
-add_test(NAME    ${EXEC_NAME4} COMMAND ${EXEC_NAME4})
+    add_test(NAME ${TARGETNAME} COMMAND ${TARGETNAME})
+
+endmacro()
+
+# ConvexHull
+add_executable(ApproxMVBBTest-ConvexHull ${SOURCE_FILES} ${INCLUDE_FILES} ${CMAKE_CURRENT_SOURCE_DIR}/src/main_convexHullTests.cpp   )
+defineTarget(ApproxMVBBTest-ConvexHull)
+
+# MinAreaRectangle
+add_executable(ApproxMVBBTest-MinAreaRect ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_minAreaRectangleTests.cpp )
+defineTarget(ApproxMVBBTest-MinAreaRect)
+
+add_executable(ApproxMVBBTest-Diameter  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_diameterTests.cpp )
+defineTarget(ApproxMVBBTest-Diameter)
+
+# DiamterOOBB
+add_executable(ApproxMVBBTest-DiameterOOBB ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_diameterOOBBTests.cpp )
+defineTarget(ApproxMVBBTest-DiameterOOBB)
+
+# MVBB
+add_executable(ApproxMVBBTest-MVBB  ${SOURCE_FILES} ${INCLUDE_FILES}  ${CMAKE_CURRENT_SOURCE_DIR}/src/main_mvbbTests.cpp )
+defineTarget(ApproxMVBBTest-MVBB)
+
+# Copy python scripts
+
+

@@ -8,8 +8,8 @@ get_filename_component( ApproxMVBB_DIR ${ApproxMVBB_DIR} ABSOLUTE )
 message(STATUS "ApproxMVBB_DIR:" ${ApproxMVBB_DIR})
 
 # add ApproxMVBB and support for kdTree and XML output
-find_package(ApproxMVBB REQUIRED COMPONENTS XML_SUPPORT KDTREE_SUPPORT)
+find_package(ApproxMVBB REQUIRED)
 
 # add simple executable
 add_executable(libraryUsage ./main.cpp)
-target_link_libraries(libraryUsage ApproxMVBB::Core ApproxMVBB::KdTreeSupport ApproxMVBB::XMLSupport)
+target_link_libraries(libraryUsage ApproxMVBB::Core)

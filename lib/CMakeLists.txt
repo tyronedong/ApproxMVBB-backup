@@ -103,7 +103,7 @@ endif()
 
 # Write dependency cmake config file
 configure_file ("${CMAKE_CURRENT_SOURCE_DIR}/cmake/approxmvbb-config-dependencies.cmake"
-                "${CMAKE_CURRENT_BINARY_DIR}/cmake/approxmvbb-config-dependencies.cmake" COPYONLY)
+                "${CMAKE_CURRENT_BINARY_DIR}/cmake/approxmvbb-config-dependencies.cmake" @ONLY)
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/cmake/approxmvbb-config-dependencies.cmake"
                 DESTINATION "${ApproxMVBB_CMAKE_CONFIG_INSTALL_DIR}"
                 COMPONENT Devel)

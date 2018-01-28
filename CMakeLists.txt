@@ -82,13 +82,13 @@ mark_as_advanced( ApproxMVBB_BUILD_BENCHMARKS)
 set(ApproxMVBB_BUILD_BENCHMARKS OFF CACHE BOOL "Build the benchmarks (only meaningful in Release!)")
 
 mark_as_advanced( ApproxMVBB_BUILD_EXAMPLE )
-set(ApproxMVBB_BUILD_EXAMPLE OFF CACHE BOOL "Build the example, the library is automatically built if this is true")
+set(ApproxMVBB_BUILD_EXAMPLE ON CACHE BOOL "Build the example, the library is automatically built if this is true")
 
 mark_as_advanced( ApproxMVBB_FORCE_MSGLOG_LEVEL)
 set(ApproxMVBB_FORCE_MSGLOG_LEVEL "0" CACHE STRING "Force the message log level (0-3), 0 = use deubg/release settings in LogDefines.hpp!")
 
 mark_as_advanced( ApproxMVBB_USE_OPENMP)
-set(ApproxMVBB_USE_OPENMP OFF CACHE BOOL "Try to use OpenMp for parallel speedup")
+set(ApproxMVBB_USE_OPENMP ON CACHE BOOL "Try to use OpenMp for parallel speedup")
 
 mark_as_advanced( ApproxMVBB_BUILD_LIBRARY_STATIC  )
 set(ApproxMVBB_BUILD_LIBRARY_STATIC OFF CACHE BOOL "Build a static library")
