@@ -14,11 +14,11 @@
 #include "ApproxMVBB/Config/Config.hpp"
 #include ApproxMVBB_TypeDefs_INCLUDE_FILE
 #include "ApproxMVBB/KdTree.hpp"
+#include "ApproxMVBB/Common/CPUTimer.hpp"
 
 #ifdef ApproxMVBB_XMLSUPPORT
 #    include "ApproxMVBB/KdTreeXml.hpp"
 #endif
-
 
 ApproxMVBB_DEFINE_MATRIX_TYPES;
 ApproxMVBB_DEFINE_POINTS_CONFIG_TYPES;

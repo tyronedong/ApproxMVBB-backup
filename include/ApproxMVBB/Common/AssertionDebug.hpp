@@ -19,8 +19,8 @@
 #include ApproxMVBB_Exception_INCLUDE_FILE
 
 #ifndef NDEBUG
-    // Debug!
-    /**
+// Debug!
+/**
      * @brief An Assert Macro to use within C++ code.
      * @param condition The condition which needs to be truem otherwise an assertion
      * is thrown!

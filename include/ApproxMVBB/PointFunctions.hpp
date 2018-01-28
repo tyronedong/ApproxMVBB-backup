@@ -16,10 +16,10 @@
 #include ApproxMVBB_AssertionDebug_INCLUDE_FILE
 #include ApproxMVBB_StaticAssert_INCLUDE_FILE
 #include ApproxMVBB_TypeDefs_INCLUDE_FILE
+#include "ApproxMVBB/Common/FloatingPointComparision.hpp"
 #include "ApproxMVBB/Common/TypeDefsPoints.hpp"
 #include "ApproxMVBB/Diameter/EstimateDiameter.hpp"
 #include "ApproxMVBB/GeometryPredicates/Predicates.hpp"
-#include "ApproxMVBB/Common/FloatingPointComparision.hpp"
 
 #ifdef __clang__
 #    pragma clang diagnostic push
@@ -345,8 +345,8 @@ namespace ApproxMVBB
     }  // namespace PointFunctions
 }  // namespace ApproxMVBB
 
-#ifdef __clang__
-#    pragma clang diagnostic pop
-#endif
+#    ifdef __clang__
+#        pragma clang diagnostic pop
+#    endif
 
 #endif

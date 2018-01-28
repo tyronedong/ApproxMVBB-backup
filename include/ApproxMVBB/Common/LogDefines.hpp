@@ -42,7 +42,7 @@
 #    define ApproxMVBB_MSGLOG_LEVEL ApproxMVBB_FORCE_MSGLOG_LEVEL  // force the output level if set in the config!
 #else
 #    ifndef NDEBUG
-        // Debug!
+// Debug!
 #        define ApproxMVBB_MSGLOG_LEVEL 2  // 0 = no output
 #    else
 #        define ApproxMVBB_MSGLOG_LEVEL 0  // 0 = no output

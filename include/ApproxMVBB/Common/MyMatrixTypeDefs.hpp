@@ -151,7 +151,7 @@ namespace ApproxMVBB
         template<typename EigenType>                                             \
         using MatrixMap = ApproxMVBB::MyMatrix::MatrixMap<EigenType>
 
-    /**
+/**
      * @brief This macro is used to typedef all custom matrix types which have
      * nothing to do with the system.
      */

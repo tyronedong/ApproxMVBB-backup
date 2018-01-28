@@ -14,17 +14,17 @@
 #include <algorithm>
 #include <array>
 #include <deque>
+#include <fstream>
 #include <initializer_list>
 #include <list>
 #include <memory>
+#include <meta/meta.hpp>
 #include <queue>
 #include <tuple>
 #include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
-#include <fstream>
-#include <meta/meta.hpp>
 
 #include "ApproxMVBB/Config/Config.hpp"
 #include ApproxMVBB_TypeDefs_INCLUDE_FILE
@@ -2590,7 +2590,7 @@ namespace ApproxMVBB
             /**
              * =============================================================================*/
 
-                    /** Returns tuple with values
+            /** Returns tuple with values
              * (number of leafs, avg. leaf data size, min. leaf data size, max. leaf data
              * size)
              */

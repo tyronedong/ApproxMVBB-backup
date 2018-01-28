@@ -4,11 +4,11 @@
 //#define EIGEN_DONT_VECTORIZE
 //#define EIGEN_DISABLE_UNALIGNED_ARRAY_ASSERT
 
+#include <Eigen/Dense>
+#include <Eigen/StdVector>
 #include <map>
 #include <unordered_map>
 #include <vector>
-#include <Eigen/StdVector>
-#include <Eigen/Dense>
 
 /** @brief
  *	These are some container definitions
@@ -31,18 +31,18 @@ namespace ApproxMVBB
     }  // namespace MyContainers
 }  // namespace ApproxMVBB
 
-/**
+    /**
      * @brief This macro is used to typedef all custom container types.
      */
-#    define ApproxMVBB_DEFINE_CONTAINER_TYPES                                                                     \
-                                                                                                                  \
-        template<typename Key, typename Type, typename Comp>                                                      \
-        using StdMapAligned = ApproxMVBB::MyContainers::StdMapAligned<Key, Type, Comp>;                           \
-                                                                                                                  \
-        template<typename Key, typename Type, typename Hash, typename Pred>                                       \
-        using StdUMapAligned = ApproxMVBB::MyContainers::StdUMapAligned<Key, Type, Hash, Pred>;                   \
-                                                                                                                  \
-        template<typename Type>                                                                                   \
+#    define ApproxMVBB_DEFINE_CONTAINER_TYPES                                                   \
+                                                                                                \
+        template<typename Key, typename Type, typename Comp>                                    \
+        using StdMapAligned = ApproxMVBB::MyContainers::StdMapAligned<Key, Type, Comp>;         \
+                                                                                                \
+        template<typename Key, typename Type, typename Hash, typename Pred>                     \
+        using StdUMapAligned = ApproxMVBB::MyContainers::StdUMapAligned<Key, Type, Hash, Pred>; \
+                                                                                                \
+        template<typename Type>                                                                 \
         using StdVecAligned = ApproxMVBB::MyContainers::StdVecAligned<Type>
 
 #endif
