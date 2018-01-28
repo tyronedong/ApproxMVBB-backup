@@ -2,6 +2,8 @@
 # BUILD ========================================================================
 # this script is SOURCED!!!!
 
+set -e
+
 # Check if we build the project
 if [ "$BUILD_APPROXMVBB" == "OFF" ]; then
   echo "Do not build ApproxMVBB!"
@@ -26,8 +28,6 @@ if [ ! -d $ROOT_PATH/build ]; then mkdir $ROOT_PATH/build; fi
 cd $ROOT_PATH/build
 cmake $CHECKOUT_PATH  -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
                       -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-                      -DCMAKE_CXX_FLAGS="${CXX_FLAGS}" \
-                      -DCMAKE_EXE_LINKER_FLAGS="${CXX_LINKER_FLAGS}" \
                       -DApproxMVBB_FORCE_MSGLOG_LEVEL=2
 make VERBOSE=1
 make install
@@ -41,10 +41,7 @@ INSTALL=$(find $ROOT_PATH/build/install/lib/cmake/* -type d)
 echo "Install dir= $INSTALL"
 cmake $CHECKOUT_PATH/example/libraryUsage -DCMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH" \
                                           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-                                          -DCMAKE_CXX_FLAGS="${CXX_FLAGS}" \
-                                          -DCMAKE_EXE_LINKER_FLAGS="${CXX_LINKER_FLAGS}" \
                                           -DApproxMVBB_DIR=$INSTALL
-                                          -DPugiXML_DIR=$INSTALL
 make VERBOSE=1
 cd $ROOT_PATH
 
@@ -55,3 +52,4 @@ if [ $branchName == "unitTests" ]; then
 fi
 
 # BUILD COMPLETE ================================================================
+set +e
