@@ -4,8 +4,6 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/;${CMAKE_MODULE_PATH}")
 message(STATUS "Module path is now set to: " ${CMAKE_MODULE_PATH} )
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
-
 #The name of the project ===============================================
 set(ApproxMVBBProjectName "ApproxMVBB")
 if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
@@ -16,6 +14,11 @@ project(${ApproxMVBBProjectName} LANGUAGES CXX C)
 
 set(ApproxMVBB_BINARY_DIR ${PROJECT_BINARY_DIR})
 set(ApproxMVBB_ROOT_DIR   ${PROJECT_SOURCE_DIR})
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # PRECISION ISSUES =====================================================
 # From http://christian-seiler.de/projekte/fpmath/
@@ -54,7 +57,7 @@ endif()
 mark_as_advanced(MULTITHREADED_BUILD)
 set(MULTITHREADED_BUILD ON CACHE BOOL "Parallel build with as many threads as possible!")
 if(MULTITHREADED_BUILD)
-	if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
+    if(${CMAKE_GENERATOR} MATCHES "Unix Makefiles")
             file(COPY ${ApproxMVBB_ROOT_DIR}/cmake/parallelmake.sh DESTINATION ${PROJECT_BINARY_DIR}
                 FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
                 NO_SOURCE_PERMISSIONS
@@ -62,7 +65,7 @@ if(MULTITHREADED_BUILD)
             set(CMAKE_MAKE_PROGRAM "${PROJECT_BINARY_DIR}/parallelmake.sh")
             message(STATUS "Set make program to ${PROJECT_BINARY_DIR}/parallelmake.sh")
     elseif(MSVC)
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" "/MP")
+      add_definitions("/MP")
       message(STATUS "Added parallel build arguments to CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
     endif()
 endif()
@@ -151,11 +154,11 @@ message(STATUS "Added '${MYPROJECT_CXX_FLAGS}' to CMAKE_CXX and CMAKE_C_FLAGS: $
 # Define Install Directories
 # Install stuff (default location is not some where on the system! for safty reasons)
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/../install" CACHE STRING "Install prefix (e.g. /usr/local/)" FORCE)
+    set(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/install" CACHE STRING "Install prefix (e.g. /usr/local/)" FORCE)
 endif()
-if(UNIX)
+if(${UNIX})
     include(GNUInstallDirs)
-    set(ApproxMVBB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCDIR}") 
+    set(ApproxMVBB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}") 
     set(ApproxMVBB_RUNTIME_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}") 
     set(ApproxMVBB_LIBRARY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(ApproxMVBB_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
@@ -165,8 +168,9 @@ if(UNIX)
 
     set(ApproxMVBB_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/ApproxMVBB/cmake")
     set(ApproxMVBB_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/ApproxMVBB")
-else(WINDOWS)
-    set(ApproxMVBB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCDIR}") 
+    
+elseif(${WIN32})
+    set(ApproxMVBB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}")
     set(ApproxMVBB_RUNTIME_INSTALL_DIR "bin") 
     set(ApproxMVBB_LIBRARY_INSTALL_DIR "bin")
     set(ApproxMVBB_ARCHIVE_INSTALL_DIR "lib")
@@ -174,6 +178,8 @@ else(WINDOWS)
 
     set(ApproxMVBB_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/cmake")
     set(ApproxMVBB_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}")
+else()
+	message(FATAL_ERROR "Could not set install folders for this platform!")
 endif()
 
 # Define all MVBB Source files
