@@ -1,0 +1,6 @@
+﻿  Building Custom Rule D:/Github/ApproxMVBB/build/thirdparty/googletest-src/googlemock/CMakeLists.txt
+  CMake does not need to re-run because D:/Github/ApproxMVBB/build/thirdparty/googletest-build/googlemock/CMakeFiles/generate.stamp is up-to-date.
+  gtest-all.cc
+  gmock-all.cc
+  gmock_main.cc
+  gmock_main.vcxproj -> D:\Github\ApproxMVBB\build\lib\Debug\gmock_maind.lib

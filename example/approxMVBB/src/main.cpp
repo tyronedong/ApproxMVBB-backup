@@ -14,7 +14,7 @@
 
 int main(int argc, char** argv)
 {
-    unsigned int nPoints = 100000;
+    unsigned int nPoints = 10000;
 
     std::cout << "Sample " << nPoints << " points in unite cube (coordinates are in world coordinate system `I` ) " << std::endl;
     ApproxMVBB::Matrix3Dyn points(3, nPoints);

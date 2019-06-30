@@ -1,0 +1,4 @@
+﻿  Building Custom Rule D:/Github/ApproxMVBB/build/thirdparty/googletest-src/googletest/CMakeLists.txt
+  CMake does not need to re-run because D:/Github/ApproxMVBB/build/thirdparty/googletest-build/googletest/CMakeFiles/generate.stamp is up-to-date.
+  gtest-all.cc
+  gtest.vcxproj -> D:\Github\ApproxMVBB\build\lib\Debug\gtestd.lib

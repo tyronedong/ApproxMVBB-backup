@@ -1,0 +1,77 @@
+﻿  Building Custom Rule D:/Github/ApproxMVBB/example/approxMVBB/CMakeLists.txt
+  CMake does not need to re-run because D:/Github/ApproxMVBB/build/example/approxMVBB/CMakeFiles/generate.stamp is up-to-date.
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.12.25830.2 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /ID:\Github\ApproxMVBB\external\GeometryPredicates\include /ID:\Github\ApproxMVBB\external\Diameter\include /ID:\Github\ApproxMVBB\include /ID:\Github\ApproxMVBB\build\include /I"D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3" /Zi /W3 /WX- /diagnostics:classic /MP /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++14 /Fo"x64\Debug\\" /Fd"x64\Debug\vc141.pdb" /Gd /TP /errorReport:prompt D:\Github\ApproxMVBB\example\approxMVBB\src\main.cpp
+  
+  main.cpp
+D:\Github\ApproxMVBB\include\ApproxMVBB/Common/MyMatrixTypeDefs.hpp(125): warning C4251: 'ApproxMVBB::MyMatrixIOFormat::Matlab': struct 'Eigen::IOFormat' needs to have dll-interface to be used by clients of struct 'ApproxMVBB::MyMatrixIOFormat'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/IO.h(51): note: see declaration of 'Eigen::IOFormat'
+D:\Github\ApproxMVBB\include\ApproxMVBB/Common/MyMatrixTypeDefs.hpp(126): warning C4251: 'ApproxMVBB::MyMatrixIOFormat::CommaSep': struct 'Eigen::IOFormat' needs to have dll-interface to be used by clients of struct 'ApproxMVBB::MyMatrixIOFormat'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/IO.h(51): note: see declaration of 'Eigen::IOFormat'
+D:\Github\ApproxMVBB\include\ApproxMVBB/Common/MyMatrixTypeDefs.hpp(127): warning C4251: 'ApproxMVBB::MyMatrixIOFormat::SpaceSep': struct 'Eigen::IOFormat' needs to have dll-interface to be used by clients of struct 'ApproxMVBB::MyMatrixIOFormat'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/IO.h(51): note: see declaration of 'Eigen::IOFormat'
+D:\Github\ApproxMVBB\include\ApproxMVBB/OOBB.hpp(206): warning C4251: 'ApproxMVBB::OOBB::m_q_KI': class 'Eigen::Quaternion<double,0>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::OOBB'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Geometry/Quaternion.h(305): note: see declaration of 'Eigen::Quaternion<double,0>'
+D:\Github\ApproxMVBB\include\ApproxMVBB/OOBB.hpp(208): warning C4251: 'ApproxMVBB::OOBB::m_minPoint': class 'Eigen::Matrix<double,3,1,0,3,1>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::OOBB'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/Matrix.h(451): note: see declaration of 'Eigen::Matrix<double,3,1,0,3,1>'
+D:\Github\ApproxMVBB\include\ApproxMVBB/OOBB.hpp(209): warning C4251: 'ApproxMVBB::OOBB::m_maxPoint': class 'Eigen::Matrix<double,3,1,0,3,1>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::OOBB'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/Matrix.h(451): note: see declaration of 'Eigen::Matrix<double,3,1,0,3,1>'
+D:\Github\ApproxMVBB\include\ApproxMVBB/ConvexHull2D.hpp(66): warning C4251: 'ApproxMVBB::ConvexHull2D::m_indicesCH': class 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::ConvexHull2D'
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+  D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.12.25827\include\random(278): note: see declaration of 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\ApproxMVBB\include\ApproxMVBB/ConvexHull2D.hpp(67): warning C4251: 'ApproxMVBB::ConvexHull2D::m_p': class 'Eigen::Ref<EigenType,0,Eigen::OuterStride<-1>>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::ConvexHull2D'
+          with
+          [
+              EigenType=const ApproxMVBB::PointFunctions::Matrix2Dyn
+          ]
+  D:\Github\ApproxMVBB\include\ApproxMVBB/Common/MyMatrixTypeDefs.hpp(117): note: see declaration of 'Eigen::Ref<EigenType,0,Eigen::OuterStride<-1>>'
+          with
+          [
+              EigenType=const ApproxMVBB::PointFunctions::Matrix2Dyn
+          ]
+D:\Github\ApproxMVBB\include\ApproxMVBB/MinAreaRectangle.hpp(219): warning C4251: 'ApproxMVBB::MinAreaRectangle::m_hullIdx': class 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::MinAreaRectangle'
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+  D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.12.25827\include\random(278): note: see declaration of 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\ApproxMVBB\include\ApproxMVBB/MinAreaRectangle.hpp(221): warning C4251: 'ApproxMVBB::MinAreaRectangle::m_angles': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::MinAreaRectangle'
+          with
+          [
+              _Ty=double
+          ]
+  D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.12.25827\include\random(5505): note: see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+D:\Github\ApproxMVBB\include\ApproxMVBB/MinAreaRectangle.hpp(223): warning C4251: 'ApproxMVBB::MinAreaRectangle::m_p': class 'Eigen::Ref<EigenType,0,Eigen::OuterStride<-1>>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::MinAreaRectangle'
+          with
+          [
+              EigenType=const ApproxMVBB::PointFunctions::Matrix2Dyn
+          ]
+  D:\Github\ApproxMVBB\include\ApproxMVBB/Common/MyMatrixTypeDefs.hpp(117): note: see declaration of 'Eigen::Ref<EigenType,0,Eigen::OuterStride<-1>>'
+          with
+          [
+              EigenType=const ApproxMVBB::PointFunctions::Matrix2Dyn
+          ]
+D:\Github\ApproxMVBB\include\ApproxMVBB/ProjectedPointSet.hpp(213): warning C4251: 'ApproxMVBB::ProjectedPointSet::m_p': class 'Eigen::Matrix<double,2,-1,0,2,-1>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::ProjectedPointSet'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/Matrix.h(451): note: see declaration of 'Eigen::Matrix<double,2,-1,0,2,-1>'
+D:\Github\ApproxMVBB\include\ApproxMVBB/ProjectedPointSet.hpp(215): warning C4251: 'ApproxMVBB::ProjectedPointSet::m_zDir': class 'Eigen::Matrix<double,3,1,0,3,1>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::ProjectedPointSet'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/Matrix.h(451): note: see declaration of 'Eigen::Matrix<double,3,1,0,3,1>'
+D:\Github\ApproxMVBB\include\ApproxMVBB/ProjectedPointSet.hpp(216): warning C4251: 'ApproxMVBB::ProjectedPointSet::m_A_KI': class 'Eigen::Matrix<double,3,3,0,3,3>' needs to have dll-interface to be used by clients of class 'ApproxMVBB::ProjectedPointSet'
+  d:\program files\pcl 1.8.1\3rdparty\eigen\eigen3\eigen\src/Core/Matrix.h(451): note: see declaration of 'Eigen::Matrix<double,3,3,0,3,3>'
+x64\Debug\main.obj : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'

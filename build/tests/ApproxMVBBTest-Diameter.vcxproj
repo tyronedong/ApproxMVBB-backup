@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ACF02AB8-F776-35BC-85F1-63546E952A6C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ApproxMVBBTest-Diameter</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Github\ApproxMVBB\build\tests\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ApproxMVBBTest-Diameter.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ApproxMVBBTest-Diameter</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Github\ApproxMVBB\build\tests\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ApproxMVBBTest-Diameter.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ApproxMVBBTest-Diameter</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Github\ApproxMVBB\build\tests\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ApproxMVBBTest-Diameter.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ApproxMVBBTest-Diameter</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Github\ApproxMVBB\build\tests\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ApproxMVBBTest-Diameter.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ApproxMVBBTest-Diameter</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Github/ApproxMVBB/tests/python/ D:/Github/ApproxMVBB/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\Debug\ApproxMVBBForTestsOnly-dbg.lib;..\lib\Debug\gtestd.lib;..\lib\Debug\gmock_maind.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/tests/Debug/ApproxMVBBTest-Diameter.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/tests/Debug/ApproxMVBBTest-Diameter.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Github/ApproxMVBB/tests/python/ D:/Github/ApproxMVBB/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\Release\ApproxMVBBForTestsOnly.lib;..\lib\Release\gtest.lib;..\lib\Release\gmock_main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/tests/Release/ApproxMVBBTest-Diameter.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/tests/Release/ApproxMVBBTest-Diameter.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Github/ApproxMVBB/tests/python/ D:/Github/ApproxMVBB/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\MinSizeRel\ApproxMVBBForTestsOnly.lib;..\lib\MinSizeRel\gtest.lib;..\lib\MinSizeRel\gmock_main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/tests/MinSizeRel/ApproxMVBBTest-Diameter.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/tests/MinSizeRel/ApproxMVBBTest-Diameter.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_TESTS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\tests\include;D:\Github\ApproxMVBB\build\tests\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googletest;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock\include;D:\Github\ApproxMVBB\build\thirdparty\googletest-src\googlemock;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/Github/ApproxMVBB/tests/python/ D:/Github/ApproxMVBB/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\RelWithDebInfo\ApproxMVBBForTestsOnly.lib;..\lib\RelWithDebInfo\gtest.lib;..\lib\RelWithDebInfo\gmock_main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/tests/RelWithDebInfo/ApproxMVBBTest-Diameter.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/tests/RelWithDebInfo/ApproxMVBBTest-Diameter.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\ApproxMVBB\tests\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Github/ApproxMVBB/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/Github/ApproxMVBB/tests/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseArguments.cmake;D:\Github\ApproxMVBB\cmake\DownloadProject.CMakeLists.cmake.in;D:\Github\ApproxMVBB\cmake\DownloadProject.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;D:\Github\ApproxMVBB\tests\include\TestConfig.hpp.in.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Github\ApproxMVBB\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Github/ApproxMVBB/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/Github/ApproxMVBB/tests/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseArguments.cmake;D:\Github\ApproxMVBB\cmake\DownloadProject.CMakeLists.cmake.in;D:\Github\ApproxMVBB\cmake\DownloadProject.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;D:\Github\ApproxMVBB\tests\include\TestConfig.hpp.in.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Github\ApproxMVBB\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Github/ApproxMVBB/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/Github/ApproxMVBB/tests/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseArguments.cmake;D:\Github\ApproxMVBB\cmake\DownloadProject.CMakeLists.cmake.in;D:\Github\ApproxMVBB\cmake\DownloadProject.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;D:\Github\ApproxMVBB\tests\include\TestConfig.hpp.in.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Github\ApproxMVBB\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Github/ApproxMVBB/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/Github/ApproxMVBB/tests/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseArguments.cmake;D:\Github\ApproxMVBB\cmake\DownloadProject.CMakeLists.cmake.in;D:\Github\ApproxMVBB\cmake\DownloadProject.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;D:\Github\ApproxMVBB\tests\include\TestConfig.hpp.in.cmake;D:\Github\ApproxMVBB\tests\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Github\ApproxMVBB\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Github\ApproxMVBB\tests\src\CommonFunctions.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\tests\src\TestFunctions.cpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\tests\include\CommonFunctions.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\tests\include\TestFunctions.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\tests\include\ComputeApproxMVBBTests.hpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\tests\src\main_diameterTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Github\ApproxMVBB\build\ZERO_CHECK.vcxproj">
+      <Project>{1F559021-0C51-33A0-8FCE-975300E4F741}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github\ApproxMVBB\build\lib\ApproxMVBBForTestsOnly.vcxproj">
+      <Project>{918FA35F-9C7C-3805-8265-9E06F13A2F37}</Project>
+      <Name>ApproxMVBBForTestsOnly</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-build\googlemock\gmock_main.vcxproj">
+      <Project>{5E151C8F-6C74-3A45-AB3A-BC69973E99A3}</Project>
+      <Name>gmock_main</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-build\googletest\gtest.vcxproj">
+      <Project>{8999F9C8-163E-35C1-B83E-157028CA6383}</Project>
+      <Name>gtest</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

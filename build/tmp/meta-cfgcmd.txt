@@ -1,0 +1,1 @@
+cmd='C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_CXX_COMPILER=D:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.12.25827/bin/Hostx86/x86/cl.exe;-DCMAKE_CXX_FLAGS=/DWIN32 /D_WINDOWS /W3 /GR /EHsc;-GVisual Studio 15 2017;-DCMAKE_GENERATOR_INSTANCE:INTERNAL=D:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise;<SOURCE_DIR><SOURCE_SUBDIR>'
