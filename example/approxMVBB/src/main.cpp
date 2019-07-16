@@ -76,6 +76,40 @@ int main(int argc, char** argv)
     std::cout << "OOBB with all point included: " << std::endl
               << "---> lower point in OOBB coordinate system: " << oobb.m_minPoint.transpose() << std::endl
               << "---> upper point in OOBB coordinate system: " << oobb.m_maxPoint.transpose() << std::endl;
+	
+	ApproxMVBB::OOBB::Vector3List corners = oobb.getCornerPoints();
+	
+	pcl::visualization::PCLVisualizer viewer;
+	pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 255, 255, 0); //输入的初始点云相关
+	viewer.addPointCloud(cloud, color_handler, "cloud");
+	/*for (auto& p : corners)
+	{
+		viewer.addSphere(pcl::PointXYZ(p.x(), p.y(), p.z()), 20, std::to_string(p.x()));
+		std::cout << p.x() << " " << p.y() << " " << p.z() << std::endl;
+	}*/
+	for (int i = 0; i < corners.size(); i++)
+	{
+		auto p = corners[i];
+
+		for (int j = 0; j < corners.size(); j++) {
+
+			if (i == j) continue;
+
+			
+			auto q = corners[j];
+			viewer.addLine(pcl::PointXYZ(p.x(), p.y(), p.z()), pcl::PointXYZ(q.x(), q.y(), q.z()), std::to_string(i) + "" + std::to_string(j));
+		}
+	}
+	//viewer.addCube(bboxT, bboxQ, whd(0), whd(1), whd(2), "bbox");
+	//viewer.setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, "bbox");
+	//viewer.setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 1.0, 0.0, 0.0, "bbox");
+
+	//viewer.addCoordinateSystem(0.5f*sc1);
+	viewer.setBackgroundColor(0.0, 0.0, 0.0);
+	while (!viewer.wasStopped())
+	{
+		viewer.spinOnce();
+	}
 
     return 0;
 }
