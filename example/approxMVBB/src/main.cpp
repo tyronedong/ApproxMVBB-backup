@@ -7,6 +7,11 @@
 //  License, v. 2.0. If a copy of the MPL was not distributed with this
 //  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // ========================================================================================
+#include <vtkAutoInit.h>
+VTK_MODULE_INIT(vtkRenderingOpenGL);
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT(vtkRenderingFreeType);
+VTK_MODULE_INIT(vtkRenderingVolumeOpenGL);
 
 #include <iostream>
 
@@ -14,6 +19,7 @@
 
 #include <pcl/io/pcd_io.h>
 #include <pcl/console/time.h>
+#include <pcl/visualization/pcl_visualizer.h>
 
 pcl::console::TicToc timecal;
 
@@ -27,7 +33,7 @@ int main(int argc, char** argv)
 
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 	pcl::PCDReader reader;
-	reader.read("test.pcd", *cloud);
+	reader.read("D:\\Github\\ApproxMVBB\\build\\x64\\Debug\\test.pcd", *cloud);
 
 	ApproxMVBB::Matrix3Dyn points(3, cloud->size());
 	for (int i = 0; i < cloud->size(); i++) {
