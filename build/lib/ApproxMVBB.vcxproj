@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{101E144A-1613-353C-A51D-59483D38000D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ApproxMVBB</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Github\ApproxMVBB\build\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ApproxMVBB.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ApproxMVBB-dbg</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ApproxMVBB-dbg</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Github\ApproxMVBB\build\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ApproxMVBB.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ApproxMVBB</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ApproxMVBB</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Github\ApproxMVBB\build\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ApproxMVBB.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">ApproxMVBB</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ApproxMVBB</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Github\ApproxMVBB\build\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ApproxMVBB.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">ApproxMVBB</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ApproxMVBB</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="Debug";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"Debug\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/Debug/ApproxMVBB-dbg.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/Debug/ApproxMVBB-dbg.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="Debug";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"Debug\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/Debug/ApproxMVBB-dbg.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/Debug/ApproxMVBB-dbg.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="Release";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"Release\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/Release/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/Release/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="Release";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"Release\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/Release/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/Release/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="MinSizeRel";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"MinSizeRel\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/MinSizeRel/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/MinSizeRel/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="MinSizeRel";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"MinSizeRel\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/MinSizeRel/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/MinSizeRel/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="RelWithDebInfo";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"RelWithDebInfo\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/RelWithDebInfo/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/RelWithDebInfo/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR="RelWithDebInfo";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ApproxMVBB_BUILD_LIBRARY;CMAKE_INTDIR=\"RelWithDebInfo\";ApproxMVBB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Github/ApproxMVBB/build/lib/RelWithDebInfo/ApproxMVBB.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Github/ApproxMVBB/build/lib/RelWithDebInfo/ApproxMVBB.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\ApproxMVBB\lib\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Github/ApproxMVBB/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Github/ApproxMVBB -BD:/Github/ApproxMVBB/build --check-stamp-file D:/Github/ApproxMVBB/build/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/Github/ApproxMVBB/lib/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;D:\Github\ApproxMVBB\lib\cmake\approxmvbb-config-dependencies.cmake;D:\Github\ApproxMVBB\lib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Github\ApproxMVBB\build\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\Common\MyMatrixTypeDefs.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\RandomGenerators.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\ConvexHull2D.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\MinAreaRectangle.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\ProjectedPointSet.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\OOBB.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\src\ApproxMVBB\AABB.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\Diameter\src\EstimateDiameter.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\Diameter\src\alloc.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\Diameter\src\util.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\Diameter\src\rand.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\GeometryPredicates\src\Predicates.cpp" />
+    <ClCompile Include="D:\Github\ApproxMVBB\external\GeometryPredicates\src\PredicatesInit.cpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\AssertionDebug.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\ContainerTag.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\CPUTimer.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\Exception.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\FloatingPointComparision.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\LogDefines.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\MyContainerTypeDefs.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\MyMatrixTypeDefs.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\Platform.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\SfinaeMacros.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\StaticAssert.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\TypeDefs.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\Common\TypeDefsPoints.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\AABB.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\AngleFunctions.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\ComputeApproxMVBB.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\ContainerFunctions.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\ConvexHull2D.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\GreatestCommonDivisor.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\KdTree.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\KdTreeXml.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\MakeCoordinateSystem.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\MinAreaRectangle.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\OOBB.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\PointFunctions.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\ProjectedPointSet.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\include\ApproxMVBB\RandomGenerators.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\external\Diameter\include\ApproxMVBB\Diameter\EstimateDiameter.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\external\Diameter\include\ApproxMVBB\Diameter\TypeSegment.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\external\GeometryPredicates\include\ApproxMVBB\GeometryPredicates\PredicatesInit.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\external\GeometryPredicates\include\ApproxMVBB\GeometryPredicates\Predicates.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\external\GeometryPredicates\include\ApproxMVBB\GeometryPredicates\Rounding.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\build\include\ApproxMVBB\GeometryPredicates\Config.hpp" />
+    <ClInclude Include="D:\Github\ApproxMVBB\build\include\ApproxMVBB\Config\Config.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Github\ApproxMVBB\build\ZERO_CHECK.vcxproj">
+      <Project>{1F559021-0C51-33A0-8FCE-975300E4F741}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -6,3 +6,9 @@ install*
 .vscode/.*
 .vscode/c_cpp_properties*
 .vs
+*.tlog
+*.log
+*.obj
+*.pdb
+Debug
+tmp

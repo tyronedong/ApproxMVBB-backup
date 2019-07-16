@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-skip-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\d301cf562b5b647bf2365958ae80987f\googletest-download-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\1634741d41996690e840114b56b32802\googletest-download-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\9399e3116e616e104c1f608475f8b7ca\googletest-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Github\ApproxMVBB\build\thirdparty\googletest-download\CMakeFiles\googletest-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6636097A-F402-3EC2-AF73-8EC48B1D8989}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
