@@ -133,6 +133,10 @@
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\Program Files\PhotoneoPhoXiControl\API\include;D:\Program Files\PCL 1.8.1\3rdParty\opencv\build\include;D:\Program Files\OpenNI2\Include;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Program Files\PCL 1.8.1\3rdParty\VTK\include\vtk-8.0;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\Program Files\PCL 1.8.1\include\pcl-1.8;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>D:\Program Files\PhotoneoPhoXiControl\API\lib;D:\Program Files\PCL 1.8.1\3rdParty\opencv\build\x64\vc15\lib;D:\Program Files\PCL 1.8.1\3rdParty\Boost\lib;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\lib;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\lib;D:\Program Files\OpenNI2\Lib;D:\Program Files\PCL 1.8.1\3rdParty\VTK\lib;D:\Program Files\PCL 1.8.1\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -183,7 +187,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Program Files\PCL 1.8.1\include\pcl-1.8;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\VTK\include\vtk-8.0;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\OpenNI2\Include;D:\Program Files\PCL 1.8.1\3rdParty\opencv\build\include;D:\Program Files\PhotoneoPhoXiControl\API\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -279,7 +283,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Program Files\PCL 1.8.1\include\pcl-1.8;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\VTK\include\vtk-8.0;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\OpenNI2\Include;D:\Program Files\PCL 1.8.1\3rdParty\opencv\build\include;D:\Program Files\PhotoneoPhoXiControl\API\include;D:\Github\ApproxMVBB\external\GeometryPredicates\include;D:\Github\ApproxMVBB\external\Diameter\include;D:\Github\ApproxMVBB\include;D:\Github\ApproxMVBB\build\include;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -314,7 +318,7 @@
     <Link>
       <AdditionalDependencies>..\..\lib\Release\ApproxMVBB.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Github/ApproxMVBB/build/example/approxMVBB/Release/ApproxMVBBExample-MVBB.lib</ImportLibrary>
