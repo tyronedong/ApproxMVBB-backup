@@ -11,6 +11,7 @@
 #include <iostream>
 
 #include "ApproxMVBB/ComputeApproxMVBB.hpp"
+
 #include <pcl/io/pcd_io.h>
 
 int main(int argc, char** argv)
@@ -20,6 +21,15 @@ int main(int argc, char** argv)
     std::cout << "Sample " << nPoints << " points in unite cube (coordinates are in world coordinate system `I` ) " << std::endl;
     ApproxMVBB::Matrix3Dyn points(3, nPoints);
     points.setRandom();
+
+	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::PCDReader reader;
+	reader.read("test.pcd", *cloud);
+
+	//ApproxMVBB::Matrix3Dyn points2(3, cloud->size());
+	//for (int i = 0; i < cloud->size(); i++) {
+	//	points.col(i) = ApproxMVBB::Vector3((*cloud)[i].x, (*cloud)[i].y, (*cloud)[i].z);
+	//}
 
     ApproxMVBB::OOBB oobb = ApproxMVBB::approximateMVBB(points,
                                                         0.001,
