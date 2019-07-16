@@ -13,30 +13,35 @@
 #include "ApproxMVBB/ComputeApproxMVBB.hpp"
 
 #include <pcl/io/pcd_io.h>
+#include <pcl/console/time.h>
+
+pcl::console::TicToc timecal;
 
 int main(int argc, char** argv)
 {
     unsigned int nPoints = 10000;
 
     std::cout << "Sample " << nPoints << " points in unite cube (coordinates are in world coordinate system `I` ) " << std::endl;
-    ApproxMVBB::Matrix3Dyn points(3, nPoints);
-    points.setRandom();
+    //ApproxMVBB::Matrix3Dyn points(3, nPoints);
+    //points.setRandom();
 
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 	pcl::PCDReader reader;
 	reader.read("test.pcd", *cloud);
 
-	//ApproxMVBB::Matrix3Dyn points2(3, cloud->size());
-	//for (int i = 0; i < cloud->size(); i++) {
-	//	points.col(i) = ApproxMVBB::Vector3((*cloud)[i].x, (*cloud)[i].y, (*cloud)[i].z);
-	//}
+	ApproxMVBB::Matrix3Dyn points(3, cloud->size());
+	for (int i = 0; i < cloud->size(); i++) {
+		points.col(i) = ApproxMVBB::Vector3((*cloud)[i].x, (*cloud)[i].y, (*cloud)[i].z);
+	}
 
+	timecal.tic();
     ApproxMVBB::OOBB oobb = ApproxMVBB::approximateMVBB(points,
                                                         0.001,
                                                         500,
                                                         5, /*increasing the grid size decreases speed */
                                                         0,
                                                         5);
+	std::cout << "ApproximateMVBB " << timecal.toc() << "ms" << std::endl;
 
     std::cout << "Computed OOBB: " << std::endl
               << "---> lower point in OOBB coordinate system: " << oobb.m_minPoint.transpose() << std::endl
