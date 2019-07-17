@@ -89,13 +89,11 @@ int main(int argc, char** argv)
 	}*/
 	for (int i = 0; i < corners.size(); i++)
 	{
-		auto p = corners[i];
-
 		for (int j = 0; j < corners.size(); j++) {
 
 			if (i == j) continue;
 
-			
+			auto p = corners[i];
 			auto q = corners[j];
 			viewer.addLine(pcl::PointXYZ(p.x(), p.y(), p.z()), pcl::PointXYZ(q.x(), q.y(), q.z()), std::to_string(i) + "" + std::to_string(j));
 		}
